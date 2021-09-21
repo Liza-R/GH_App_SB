@@ -37,6 +37,7 @@
 		2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */; };
 		2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889126FA260200C09E9A /* ReturnModelsDB.swift */; };
 		2087889526FA2C4E00C09E9A /* LangObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889426FA2C4E00C09E9A /* LangObj.swift */; };
+		2087889726FA321200C09E9A /* AvatarLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889626FA321200C09E9A /* AvatarLoader.swift */; };
 		95B915FF4CB556B6365FBB54 /* Pods_GH_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldInfo.swift; sourceTree = "<group>"; };
 		2087889126FA260200C09E9A /* ReturnModelsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnModelsDB.swift; sourceTree = "<group>"; };
 		2087889426FA2C4E00C09E9A /* LangObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangObj.swift; sourceTree = "<group>"; };
+		2087889626FA321200C09E9A /* AvatarLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarLoader.swift; sourceTree = "<group>"; };
 		753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.debug.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F551BA2F9CBDBB27C5EF23A4 /* Pods-GH_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.release.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				2043E17326F9ECC800FD3667 /* UserLoader.swift */,
 				2087887F26FA210800C09E9A /* RepoLoader.swift */,
 				2087888126FA211200C09E9A /* LangLoader.swift */,
+				2087889626FA321200C09E9A /* AvatarLoader.swift */,
 			);
 			path = AllLoaders;
 			sourceTree = "<group>";
@@ -282,9 +285,9 @@
 		2087889326FA261100C09E9A /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */,
-				2087889126FA260200C09E9A /* ReturnModelsDB.swift */,
 				2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */,
+				2087889126FA260200C09E9A /* ReturnModelsDB.swift */,
+				2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2043E13626F9EA0B00FD3667 /* AllUsersViewController.swift in Sources */,
+				2087889726FA321200C09E9A /* AvatarLoader.swift in Sources */,
 				2087888E26FA25D300C09E9A /* SaveInfoToRealm.swift in Sources */,
 				2043E17E26F9ED6D00FD3667 /* AllUsersSearchAlerts.swift in Sources */,
 				2087888A26FA259D00C09E9A /* UserObj.swift in Sources */,
