@@ -30,6 +30,12 @@
 		2087887E26FA1FF100C09E9A /* LangRepoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087887D26FA1FF100C09E9A /* LangRepoStruct.swift */; };
 		2087888026FA210800C09E9A /* RepoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087887F26FA210800C09E9A /* RepoLoader.swift */; };
 		2087888226FA211200C09E9A /* LangLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888126FA211200C09E9A /* LangLoader.swift */; };
+		2087888826FA259400C09E9A /* AllUsersObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888726FA259400C09E9A /* AllUsersObj.swift */; };
+		2087888A26FA259D00C09E9A /* UserObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888926FA259D00C09E9A /* UserObj.swift */; };
+		2087888C26FA25AC00C09E9A /* RepoObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888B26FA25AC00C09E9A /* RepoObj.swift */; };
+		2087888E26FA25D300C09E9A /* SaveInfoToRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */; };
+		2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */; };
+		2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889126FA260200C09E9A /* ReturnModelsDB.swift */; };
 		95B915FF4CB556B6365FBB54 /* Pods_GH_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +86,12 @@
 		2087887D26FA1FF100C09E9A /* LangRepoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangRepoStruct.swift; sourceTree = "<group>"; };
 		2087887F26FA210800C09E9A /* RepoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoLoader.swift; sourceTree = "<group>"; };
 		2087888126FA211200C09E9A /* LangLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangLoader.swift; sourceTree = "<group>"; };
+		2087888726FA259400C09E9A /* AllUsersObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersObj.swift; sourceTree = "<group>"; };
+		2087888926FA259D00C09E9A /* UserObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObj.swift; sourceTree = "<group>"; };
+		2087888B26FA25AC00C09E9A /* RepoObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoObj.swift; sourceTree = "<group>"; };
+		2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfoToRealm.swift; sourceTree = "<group>"; };
+		2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldInfo.swift; sourceTree = "<group>"; };
+		2087889126FA260200C09E9A /* ReturnModelsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnModelsDB.swift; sourceTree = "<group>"; };
 		753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.debug.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F551BA2F9CBDBB27C5EF23A4 /* Pods-GH_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.release.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +160,7 @@
 				2043E13726F9EA0B00FD3667 /* Main.storyboard */,
 				2043E17C26F9ED5200FD3667 /* AllAlerts */,
 				2043E16726F9EC0100FD3667 /* ForLoadInfoAPI */,
+				2087888526FA252C00C09E9A /* SaveInfoRealm */,
 				2043E16226F9EA3F00FD3667 /* VC_AllUsers */,
 				2043E17526F9ECF000FD3667 /* VC_User */,
 				2043E16126F9EA1A00FD3667 /* Other */,
@@ -242,6 +255,35 @@
 				2043E17D26F9ED6D00FD3667 /* AllUsersSearchAlerts.swift */,
 			);
 			path = AllAlerts;
+			sourceTree = "<group>";
+		};
+		2087888526FA252C00C09E9A /* SaveInfoRealm */ = {
+			isa = PBXGroup;
+			children = (
+				2087888626FA255500C09E9A /* Objects */,
+				2087889326FA261100C09E9A /* Operations */,
+			);
+			path = SaveInfoRealm;
+			sourceTree = "<group>";
+		};
+		2087888626FA255500C09E9A /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				2087888726FA259400C09E9A /* AllUsersObj.swift */,
+				2087888926FA259D00C09E9A /* UserObj.swift */,
+				2087888B26FA25AC00C09E9A /* RepoObj.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		2087889326FA261100C09E9A /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */,
+				2087889126FA260200C09E9A /* ReturnModelsDB.swift */,
+				2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		70BE9703F52697B8673F9B08 /* Pods */ = {
@@ -428,16 +470,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2043E13626F9EA0B00FD3667 /* AllUsersViewController.swift in Sources */,
+				2087888E26FA25D300C09E9A /* SaveInfoToRealm.swift in Sources */,
 				2043E17E26F9ED6D00FD3667 /* AllUsersSearchAlerts.swift in Sources */,
+				2087888A26FA259D00C09E9A /* UserObj.swift in Sources */,
 				2043E17226F9ECBD00FD3667 /* AllUsersLoader.swift in Sources */,
 				2043E16C26F9EC7700FD3667 /* AllUsersStruct.swift in Sources */,
 				2043E18026F9F7B000FD3667 /* UserReposTableViewCell.swift in Sources */,
 				2043E17926F9ED1300FD3667 /* UserViewController.swift in Sources */,
 				2043E17B26F9ED4100FD3667 /* AllUsersTableViewCell.swift in Sources */,
+				2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */,
 				2043E17726F9ED0900FD3667 /* UserViewModel.swift in Sources */,
 				2087888226FA211200C09E9A /* LangLoader.swift in Sources */,
+				2087888C26FA25AC00C09E9A /* RepoObj.swift in Sources */,
 				2087888026FA210800C09E9A /* RepoLoader.swift in Sources */,
 				2043E16926F9EC2400FD3667 /* AllURLs.swift in Sources */,
+				2087888826FA259400C09E9A /* AllUsersObj.swift in Sources */,
 				2043E13226F9EA0B00FD3667 /* AppDelegate.swift in Sources */,
 				2043E16E26F9EC8200FD3667 /* UserStruct.swift in Sources */,
 				2043E17426F9ECC800FD3667 /* UserLoader.swift in Sources */,
@@ -445,6 +492,7 @@
 				2043E16426F9EA5800FD3667 /* AllUsersViewModel.swift in Sources */,
 				2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */,
 				2043E13426F9EA0B00FD3667 /* SceneDelegate.swift in Sources */,
+				2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
