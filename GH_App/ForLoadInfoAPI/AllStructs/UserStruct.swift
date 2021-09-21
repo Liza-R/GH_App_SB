@@ -8,10 +8,10 @@
 import Foundation
 
 class UserInfo{
-    struct All_User_Info{
+    struct All_User_Info: Decodable{
         var info_user: Info_User?
     }
-    struct Info_User{
+    struct Info_User: Decodable{
         var login: String,
             avatar_url: String,
             repos_url: String,

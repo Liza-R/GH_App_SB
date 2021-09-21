@@ -28,6 +28,8 @@
 		2043E18026F9F7B000FD3667 /* UserReposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */; };
 		2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087883F26FA1B4C00C09E9A /* RepoStruct.swift */; };
 		2087887E26FA1FF100C09E9A /* LangRepoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087887D26FA1FF100C09E9A /* LangRepoStruct.swift */; };
+		2087888026FA210800C09E9A /* RepoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087887F26FA210800C09E9A /* RepoLoader.swift */; };
+		2087888226FA211200C09E9A /* LangLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888126FA211200C09E9A /* LangLoader.swift */; };
 		95B915FF4CB556B6365FBB54 /* Pods_GH_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReposTableViewCell.swift; sourceTree = "<group>"; };
 		2087883F26FA1B4C00C09E9A /* RepoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoStruct.swift; sourceTree = "<group>"; };
 		2087887D26FA1FF100C09E9A /* LangRepoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangRepoStruct.swift; sourceTree = "<group>"; };
+		2087887F26FA210800C09E9A /* RepoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoLoader.swift; sourceTree = "<group>"; };
+		2087888126FA211200C09E9A /* LangLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangLoader.swift; sourceTree = "<group>"; };
 		753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.debug.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F551BA2F9CBDBB27C5EF23A4 /* Pods-GH_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.release.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 			children = (
 				2043E17126F9ECBD00FD3667 /* AllUsersLoader.swift */,
 				2043E17326F9ECC800FD3667 /* UserLoader.swift */,
+				2087887F26FA210800C09E9A /* RepoLoader.swift */,
+				2087888126FA211200C09E9A /* LangLoader.swift */,
 			);
 			path = AllLoaders;
 			sourceTree = "<group>";
@@ -429,6 +435,8 @@
 				2043E17926F9ED1300FD3667 /* UserViewController.swift in Sources */,
 				2043E17B26F9ED4100FD3667 /* AllUsersTableViewCell.swift in Sources */,
 				2043E17726F9ED0900FD3667 /* UserViewModel.swift in Sources */,
+				2087888226FA211200C09E9A /* LangLoader.swift in Sources */,
+				2087888026FA210800C09E9A /* RepoLoader.swift in Sources */,
 				2043E16926F9EC2400FD3667 /* AllURLs.swift in Sources */,
 				2043E13226F9EA0B00FD3667 /* AppDelegate.swift in Sources */,
 				2043E16E26F9EC8200FD3667 /* UserStruct.swift in Sources */,

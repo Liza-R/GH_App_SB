@@ -8,7 +8,10 @@
 import Foundation
 
 class LangInfo{
-    struct Lang_Repo_Info{
+    struct Lang_Repo_Info: Decodable{
+        var info_lang: Lang?
+    }
+    struct Lang: Decodable{
 
     }
 }
