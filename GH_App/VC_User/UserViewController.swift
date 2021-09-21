@@ -8,7 +8,15 @@
 import UIKit
 
 class UserViewController: UIViewController {
-
+    @IBOutlet weak var userIcon: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var PubReposCountLabel: UILabel!
+    @IBOutlet weak var allReposTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

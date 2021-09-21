@@ -26,17 +26,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="evO-Yj-n1z">
                                 <rect key="frame" x="20" y="94" width="388" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <activityIndicatorView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="J4e-wK-qcv">
-                                    <rect key="frame" x="0.0" y="0.0" width="388" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </activityIndicatorView>
                                 <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="AgB-tU-QuJ">
-                                    <rect key="frame" x="0.0" y="212.66666828502309" width="388" height="44"/>
+                                    <rect key="frame" x="0.0" y="168.66666828502309" width="388" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="120" id="zW9-Fd-MAa" customClass="AllUsersTableViewCell" customModule="GH_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="68.333333969116211" width="388" height="120"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="388" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zW9-Fd-MAa" id="uF6-fB-uih">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="120"/>
@@ -69,6 +65,10 @@
                                                 <constraint firstItem="jQF-ZN-CZN" firstAttribute="leading" secondItem="uF6-fB-uih" secondAttribute="leadingMargin" id="qXL-WO-Sid"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="userImage" destination="jQF-ZN-CZN" id="gQN-Rt-sCt"/>
+                                            <outlet property="userNameLabel" destination="agf-Sx-SxV" id="BgG-HM-a3u"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -87,6 +87,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allUsersTable" destination="evO-Yj-n1z" id="1hd-L4-zax"/>
+                        <outlet property="userSearchBar" destination="sCZ-1a-rcs" id="h2u-Kn-dAO"/>
                         <segue destination="ZK8-Ns-G3H" kind="show" identifier="showUser" id="E3d-uE-LFW"/>
                     </connections>
                 </viewController>
@@ -94,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="-18.22429906542056" y="88.120950323974085"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="QmU-cJ-kTx">
             <objects>
-                <viewController id="ZK8-Ns-G3H" sceneMemberID="viewController">
+                <viewController id="ZK8-Ns-G3H" customClass="UserViewController" customModule="GH_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jn7-f7-VyU">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,10 +225,8 @@
                                                 <constraint firstItem="GBu-p1-dYI" firstAttribute="centerY" secondItem="L0P-Ur-W1w" secondAttribute="centerY" id="Ag2-rV-xXa"/>
                                                 <constraint firstItem="aVN-Xp-Wih" firstAttribute="leading" secondItem="5eb-BD-yps" secondAttribute="leadingMargin" constant="20" id="Bcs-6C-Ib8"/>
                                                 <constraint firstItem="V7H-o0-fpc" firstAttribute="top" secondItem="mD9-8e-CQ8" secondAttribute="bottom" constant="5" id="MIk-CJ-Zye"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aVN-Xp-Wih" secondAttribute="trailing" constant="20" id="PUw-BS-sJJ"/>
                                                 <constraint firstItem="GBu-p1-dYI" firstAttribute="centerX" secondItem="5eb-BD-yps" secondAttribute="centerX" constant="60" id="QWZ-VJ-jUy"/>
                                                 <constraint firstItem="mD9-8e-CQ8" firstAttribute="top" secondItem="aVN-Xp-Wih" secondAttribute="bottom" constant="5" id="Qmi-Or-pAD"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="V7H-o0-fpc" secondAttribute="trailing" constant="20" id="WkZ-zR-eBg"/>
                                                 <constraint firstItem="L0P-Ur-W1w" firstAttribute="leading" secondItem="5eb-BD-yps" secondAttribute="leadingMargin" id="b7G-OF-5oe"/>
                                                 <constraint firstItem="V7H-o0-fpc" firstAttribute="leading" secondItem="5eb-BD-yps" secondAttribute="leadingMargin" constant="20" id="bb6-MX-PHJ"/>
                                                 <constraint firstItem="aVN-Xp-Wih" firstAttribute="top" secondItem="5eb-BD-yps" secondAttribute="topMargin" constant="5" id="cSZ-ua-Tni"/>
@@ -235,6 +235,15 @@
                                                 <constraint firstItem="aVN-Xp-Wih" firstAttribute="centerX" secondItem="5eb-BD-yps" secondAttribute="centerX" id="xN8-bB-Sb9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="repoCreateLabel" destination="dB1-UG-KQT" id="HLc-XV-rB5"/>
+                                            <outlet property="repoDescriptLabel" destination="V7H-o0-fpc" id="PAO-rl-ZkL"/>
+                                            <outlet property="repoLangLabel" destination="GBu-p1-dYI" id="sr6-kO-pth"/>
+                                            <outlet property="repoNameLabel" destination="aVN-Xp-Wih" id="1ER-Pa-ZnR"/>
+                                            <outlet property="repoPushLabel" destination="xj3-Jf-LW5" id="QMj-uF-rHV"/>
+                                            <outlet property="repoStatusLabel" destination="mD9-8e-CQ8" id="agh-9g-YHL"/>
+                                            <outlet property="repoUpdateLabel" destination="dB1-UG-KQT" id="khh-o2-45Q"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -268,6 +277,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XHH-RU-DGX"/>
+                    <connections>
+                        <outlet property="PubReposCountLabel" destination="Umf-V1-Hb1" id="fFH-a9-e53"/>
+                        <outlet property="allReposTable" destination="jN5-QS-JF3" id="QIt-XD-uV3"/>
+                        <outlet property="companyLabel" destination="gWU-Ig-CxN" id="eqT-yF-xWd"/>
+                        <outlet property="emailLabel" destination="5IL-7L-DTb" id="lw9-Y0-DFZ"/>
+                        <outlet property="locationLabel" destination="5IL-7L-DTb" id="AMM-Cv-M6y"/>
+                        <outlet property="nameLabel" destination="rst-9p-dY2" id="Iuo-gq-8NS"/>
+                        <outlet property="userIcon" destination="Bln-TC-8YY" id="Dby-z7-gb5"/>
+                        <outlet property="userNameLabel" destination="m3g-Wl-kck" id="2x6-RT-7vg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oS9-t3-HuX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

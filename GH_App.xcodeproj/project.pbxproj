@@ -217,8 +217,8 @@
 		2043E17526F9ECF000FD3667 /* VC_User */ = {
 			isa = PBXGroup;
 			children = (
-				2043E17626F9ED0900FD3667 /* UserViewModel.swift */,
 				2043E17826F9ED1300FD3667 /* UserViewController.swift */,
+				2043E17626F9ED0900FD3667 /* UserViewModel.swift */,
 				2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */,
 			);
 			path = VC_User;
