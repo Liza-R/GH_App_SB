@@ -13,7 +13,6 @@ class AvatarLoader{
     func avatarLoader(ava_url: String) -> UIImageView{
         let imageView = UIImageView(),
             url = URL(string: ava_url)!
-        
         imageView.af.setImage(withURL: url)
         return imageView
     }
