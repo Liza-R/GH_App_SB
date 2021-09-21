@@ -26,6 +26,8 @@
 		2043E17B26F9ED4100FD3667 /* AllUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E17A26F9ED4100FD3667 /* AllUsersTableViewCell.swift */; };
 		2043E17E26F9ED6D00FD3667 /* AllUsersSearchAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E17D26F9ED6D00FD3667 /* AllUsersSearchAlerts.swift */; };
 		2043E18026F9F7B000FD3667 /* UserReposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */; };
+		2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087883F26FA1B4C00C09E9A /* RepoStruct.swift */; };
+		2087887E26FA1FF100C09E9A /* LangRepoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087887D26FA1FF100C09E9A /* LangRepoStruct.swift */; };
 		95B915FF4CB556B6365FBB54 /* Pods_GH_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		2043E17A26F9ED4100FD3667 /* AllUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersTableViewCell.swift; sourceTree = "<group>"; };
 		2043E17D26F9ED6D00FD3667 /* AllUsersSearchAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersSearchAlerts.swift; sourceTree = "<group>"; };
 		2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReposTableViewCell.swift; sourceTree = "<group>"; };
+		2087883F26FA1B4C00C09E9A /* RepoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoStruct.swift; sourceTree = "<group>"; };
+		2087887D26FA1FF100C09E9A /* LangRepoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangRepoStruct.swift; sourceTree = "<group>"; };
 		753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.debug.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F551BA2F9CBDBB27C5EF23A4 /* Pods-GH_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.release.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 			children = (
 				2043E16B26F9EC7700FD3667 /* AllUsersStruct.swift */,
 				2043E16D26F9EC8200FD3667 /* UserStruct.swift */,
+				2087883F26FA1B4C00C09E9A /* RepoStruct.swift */,
+				2087887D26FA1FF100C09E9A /* LangRepoStruct.swift */,
 			);
 			path = AllStructs;
 			sourceTree = "<group>";
@@ -427,7 +433,9 @@
 				2043E13226F9EA0B00FD3667 /* AppDelegate.swift in Sources */,
 				2043E16E26F9EC8200FD3667 /* UserStruct.swift in Sources */,
 				2043E17426F9ECC800FD3667 /* UserLoader.swift in Sources */,
+				2087887E26FA1FF100C09E9A /* LangRepoStruct.swift in Sources */,
 				2043E16426F9EA5800FD3667 /* AllUsersViewModel.swift in Sources */,
+				2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */,
 				2043E13426F9EA0B00FD3667 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

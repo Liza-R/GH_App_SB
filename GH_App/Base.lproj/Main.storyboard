@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,12 +28,12 @@
                                 <rect key="frame" x="20" y="94" width="388" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="AgB-tU-QuJ">
-                                    <rect key="frame" x="0.0" y="168.66666828502309" width="388" height="44"/>
+                                    <rect key="frame" x="0.0" y="187.33333206176761" width="388" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="120" id="zW9-Fd-MAa" customClass="AllUsersTableViewCell" customModule="GH_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="388" height="120"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zW9-Fd-MAa" id="uF6-fB-uih">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="120"/>
@@ -160,13 +161,13 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="209-LE-5DZ">
-                                    <rect key="frame" x="0.0" y="257.66666828502309" width="408" height="44"/>
+                                    <rect key="frame" x="0.0" y="276.33333206176758" width="408" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repoCell" rowHeight="165" id="hB3-31-9hG" customClass="UserReposTableViewCell" customModule="GH_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="68.333333969116211" width="408" height="165"/>
+                                        <rect key="frame" x="0.0" y="88.666666030883789" width="408" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hB3-31-9hG" id="5eb-BD-yps">
                                             <rect key="frame" x="0.0" y="0.0" width="408" height="165"/>
@@ -191,33 +192,39 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language repo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBu-p1-dYI">
-                                                    <rect key="frame" x="209.66666666666663" y="101" width="109" height="19.333333333333329"/>
+                                                    <rect key="frame" x="209.66666666666663" y="104.33333333333333" width="109" height="19.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="L0P-Ur-W1w">
-                                                    <rect key="frame" x="19.999999999999996" y="84" width="48.666666666666657" height="53"/>
+                                                    <rect key="frame" x="20" y="84" width="200" height="60"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnR-JM-Ik5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="14.333333333333334"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnR-JM-Ik5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="16.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB1-UG-KQT">
-                                                            <rect key="frame" x="0.0" y="19.333333333333329" width="48.666666666666664" height="14.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="21.666666666666671" width="200" height="16.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj3-Jf-LW5">
-                                                            <rect key="frame" x="0.0" y="38.666666666666671" width="48.666666666666664" height="14.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="43.333333333333329" width="200" height="16.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="7an-Xv-p2O"/>
+                                                        <constraint firstItem="xj3-Jf-LW5" firstAttribute="height" secondItem="dB1-UG-KQT" secondAttribute="height" id="WQj-fl-Gbh"/>
+                                                        <constraint firstItem="dB1-UG-KQT" firstAttribute="height" secondItem="tnR-JM-Ik5" secondAttribute="height" id="yqZ-uZ-9Sy"/>
+                                                        <constraint firstAttribute="width" constant="200" id="zg5-Ea-t5r"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
