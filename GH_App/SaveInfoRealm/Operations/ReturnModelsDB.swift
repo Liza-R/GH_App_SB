@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import RealmSwift
+
+class ReturnInfoModels{
+    func returnAllUsers() -> Results<AllUsersInfoDB>{
+        return SaveInfo().realm.objects(AllUsersInfoDB.self)
+    }
+}

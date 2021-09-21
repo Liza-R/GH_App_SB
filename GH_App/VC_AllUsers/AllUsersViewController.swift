@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     var usersLogins: [String] = [],
         usersAva: [String] = []
     
+    let allUsersInfoRealm = ReturnInfoModels().returnAllUsers()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.allUsersTable.reloadData()
