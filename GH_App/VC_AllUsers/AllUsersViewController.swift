@@ -49,7 +49,12 @@ class ViewController: UIViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        uploadNOEmptyUsersInfo()
+        switch allUsersInfoRealm.isEmpty {
+        case true:
+            print("The database is empty. Trying to download new information")
+        case false:
+            uploadNOEmptyUsersInfo()
+        }
         AllUsersViewModel().uploadAllUsersInfo()
         self.allUsersTable.reloadData()
         self.refreshControl.endRefreshing()

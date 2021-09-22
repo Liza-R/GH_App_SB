@@ -14,7 +14,7 @@ class LangLoader{
         .validate()
         .responseDecodable(of: LangInfo.Lang_Repo_Info.self) { (response) in
                 let errors = response.error as Any
-                print(String(describing: errors))
+                print(String(describing: errors), "error --> load lang repo info")
                 guard let lang_info = response.value else { return }
                 completion([lang_info])
         }

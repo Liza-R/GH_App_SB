@@ -14,7 +14,7 @@ class RepoLoader{
         .validate()
             .responseDecodable(of: RepoInfo.All_Repo_Info.self) { (response) in
                 let errors = response.error as Any
-                print(String(describing: errors))
+                print(String(describing: errors), "error --> load repo info")
                 guard let repo_info = response.value else { return }
                 completion([repo_info])
         }
