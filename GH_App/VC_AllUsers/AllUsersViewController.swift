@@ -43,7 +43,7 @@ class ViewController: UIViewController {
                 self.allUsersTable.reloadData()
             }else{}
         }.disposed(by: disposeBag)
-        
+        self.allUsersTable.rowHeight = 120
         self.allUsersTable.reloadData()
         self.allUsersTable.dataSource = self
     }
@@ -83,12 +83,10 @@ extension ViewController: UITableViewDataSource{
 
     func tableView(_ tableView_Alam: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView_Alam.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! AllUsersTableViewCell,
-            ava = AvatarLoader().avatarLoader(ava_url: usersAva[indexPath.row])
+        let cell = tableView_Alam.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! AllUsersTableViewCell
         
         cell.userNameLabel.text = usersLogins[indexPath.row]
-        cell.userImage = ava
-        
+        AvatarLoader().newAvatarLoader(ava_url: usersAva[indexPath.row], myImageView: cell.userImage)
         return cell
     }
 }

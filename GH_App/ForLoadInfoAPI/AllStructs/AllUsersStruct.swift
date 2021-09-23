@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct Info_Mass: Decodable{
+    var login: String,
+        avatar_url: String
+}
+
 class AllUsersInfo{
     /*struct Info_: Decodable{
         var all_users: [All_Users_Mass?]

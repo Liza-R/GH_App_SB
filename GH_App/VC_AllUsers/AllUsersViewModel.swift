@@ -8,7 +8,7 @@
 import Foundation
 
 class AllUsersViewModel{
-    private var all_users: [AllUsersInfo.Info_Mass] = []
+    private var all_users: [[AllUsersInfo.Info_Mass]] = [[]]
     
     func uploadAllUsersInfo(){
         var logins: [String] = [],
@@ -18,12 +18,10 @@ class AllUsersViewModel{
             self.all_users = all_users
             DispatchQueue.main.async {
                 for i in all_users{
-                    logins.append(i.login)
-                    avatar_urls.append(i.avatar_url)
-                    /*for j in i.all_users{
-                        logins.append(j?.info_mass?.login ?? "Login Not Found")
-                        avatar_urls.append(j?.info_mass?.avatar_url ?? "Login Not Found")
-                    }*/
+                    for j in i{
+                        logins.append(j.login)
+                        avatar_urls.append(j.avatar_url)
+                    }
                 }
                 SaveInfo().savingAllUsersInfo(logins: logins, avatar_urls: avatar_urls)
             }

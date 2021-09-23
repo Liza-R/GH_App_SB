@@ -10,14 +10,10 @@ import Alamofire
 
 class AllUsersLoader{
     
-    struct HTTPBinResponse: Codable {
-        let args: [String: String]
-    }
-    
-    func loadAllUsersInfo(completion: @escaping ([AllUsersInfo.Info_Mass]) -> Void){
+    func loadAllUsersInfo(completion: @escaping ([[AllUsersInfo.Info_Mass]]) -> Void){
         AF.request(URL(string: URLs().allUsersURL)!)
         .validate()
-        .responseDecodable(of: AllUsersInfo.Info_Mass.self) { (response) in
+        .responseDecodable(of: [AllUsersInfo.Info_Mass].self) { (response) in
                 let errors = response.error as Any
                 print(String(describing: errors), "error --> load all users info")
             
