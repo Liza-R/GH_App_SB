@@ -17,9 +17,10 @@ class ViewController: UIViewController {
     
     var usersLogins: [String] = [],
         usersAva: [String] = [],
-        
+        newUsersLogins: [String] = [],
+        newUsersAva: [String] = [],
+        searchResult: [String] = [],
         refreshControl = UIRefreshControl(),
-        
         disposeBag = DisposeBag()
     
     let allUsersInfoRealm = ReturnInfoModels().returnAllUsers()
@@ -27,7 +28,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        refreshControl.tintColor = .white
         self.allUsersTable.addSubview(refreshControl)
+        self.userSearchBar.delegate = self
         
         switch allUsersInfoRealm.isEmpty {
         case true:
@@ -43,6 +46,7 @@ class ViewController: UIViewController {
                 self.allUsersTable.reloadData()
             }else{}
         }.disposed(by: disposeBag)
+        
         self.allUsersTable.rowHeight = 120
         self.allUsersTable.reloadData()
         self.allUsersTable.dataSource = self
@@ -54,6 +58,7 @@ class ViewController: UIViewController {
             print("The database is empty. Trying to download new information")
         case false:
             uploadNOEmptyUsersInfo()
+            print("Refreshing allUsersTable")
         }
         AllUsersViewModel().uploadAllUsersInfo()
         self.allUsersTable.reloadData()
@@ -71,9 +76,28 @@ class ViewController: UIViewController {
         for i in inAllUsers.avatar_urls{
             self.usersAva.append(i.avatar_url)
         }
+        searchResult = self.usersLogins
+        newUsersAva = self.usersAva
+        newUsersLogins = self.usersLogins
     }
 }
 
+extension ViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            usersLogins = searchText.isEmpty ? searchResult: searchResult.filter{ (item: String) -> Bool in
+                return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
+        for (i, j) in newUsersLogins.enumerated(){
+            for (k, m) in usersLogins.enumerated(){
+                if j == m{
+                    self.usersAva[k] = newUsersAva[i]
+                    self.usersLogins[k] = newUsersLogins[i]
+                }
+            }
+        }
+        allUsersTable.reloadData()
+    }
+}
 
 extension ViewController: UITableViewDataSource{
 

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sCZ-1a-rcs">
+                            <searchBar contentMode="redraw" placeholder="Input user name" translatesAutoresizingMaskIntoConstraints="NO" id="sCZ-1a-rcs">
                                 <rect key="frame" x="20" y="104" width="388" height="60"/>
                                 <color key="backgroundColor" red="0.2352941036" green="0.1215686351" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
