@@ -11,6 +11,5 @@ class URLs{
     let allUsersURL = "https://api.github.com/users",
         userURL = "https://api.github.com/users/USERNAME",
         repoURL = "https://api.github.com/users/USERNAME/repos",
-        langRepo = "https://api.github.com/repos/USERNAME/REPONAME"
-
+        searchUsers = "https://api.github.com/search/users?q=USERNAME"
 }

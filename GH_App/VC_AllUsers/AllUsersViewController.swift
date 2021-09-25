@@ -9,7 +9,8 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-var savingAllUsers = BehaviorRelay<Bool>(value: false)
+var savingAllUsers = BehaviorRelay<Bool>(value: false),
+    savingAllSearchUsers = BehaviorRelay<Bool>(value: false)
 
 class ViewController: UIViewController {
     @IBOutlet weak var userSearchBar: UISearchBar!
@@ -17,8 +18,8 @@ class ViewController: UIViewController {
     
     var usersLogins: [String] = [],
         usersAva: [String] = [],
-        newUsersLogins: [String] = [],
-        newUsersAva: [String] = [],
+        searchUsersLogins: [String] = [],
+        searchUsersAva: [String] = [],
         searchResult: [String] = [],
         refreshControl = UIRefreshControl(),
         disposeBag = DisposeBag()
@@ -77,8 +78,8 @@ class ViewController: UIViewController {
             self.usersAva.append(i.avatar_url)
         }
         searchResult = self.usersLogins
-        newUsersAva = self.usersAva
-        newUsersLogins = self.usersLogins
+        //newUsersAva = self.usersAva
+        //newUsersLogins = self.usersLogins
     }
 }
 
@@ -87,11 +88,11 @@ extension ViewController: UISearchBarDelegate{
             usersLogins = searchText.isEmpty ? searchResult: searchResult.filter{ (item: String) -> Bool in
                 return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
             }
-        for (i, j) in newUsersLogins.enumerated(){
+        for (i, j) in searchUsersLogins.enumerated(){
             for (k, m) in usersLogins.enumerated(){
                 if j == m{
-                    self.usersAva[k] = newUsersAva[i]
-                    self.usersLogins[k] = newUsersLogins[i]
+                    self.usersAva[k] = searchUsersAva[i]
+                    self.usersLogins[k] = searchUsersLogins[i]
                 }
             }
         }

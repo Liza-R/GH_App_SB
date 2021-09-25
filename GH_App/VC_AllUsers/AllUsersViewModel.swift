@@ -8,7 +8,8 @@
 import Foundation
 
 class AllUsersViewModel{
-    private var all_users: [[AllUsersInfo.Info_Mass]] = [[]]
+    private var all_users: [[AllUsersInfo.Info_Mass]] = [[]],
+                all_search_users: [[AllSearchUsers.SearchUsers_Mass]] = [[]]
     
     func uploadAllUsersInfo(){
         var logins: [String] = [],
@@ -18,6 +19,23 @@ class AllUsersViewModel{
             self.all_users = all_users
             DispatchQueue.main.async {
                 for i in all_users{
+                    for j in i{
+                        logins.append(j.login)
+                        avatar_urls.append(j.avatar_url)
+                    }
+                }
+                SaveInfo().savingAllUsersInfo(logins: logins, avatar_urls: avatar_urls)
+            }
+        }
+    }
+    func uploadAllSearchUsersInfo(){
+        var logins: [String] = [],
+            avatar_urls: [String] = []
+        
+        AllSearchUsersLoader().loadAllSearchUsersInfo { all_search_users in
+            self.all_search_users = all_search_users
+            DispatchQueue.main.async {
+                for i in all_search_users{
                     for j in i{
                         logins.append(j.login)
                         avatar_urls.append(j.avatar_url)
