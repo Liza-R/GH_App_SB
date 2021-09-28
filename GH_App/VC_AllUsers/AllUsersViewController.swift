@@ -10,7 +10,9 @@ import RxCocoa
 import RxSwift
 
 var savingAllUsers = BehaviorRelay<Bool>(value: false),
-    savingAllSearchUsers = BehaviorRelay<Bool>(value: false)
+    savingAllSearchUsers = BehaviorRelay<Bool>(value: false),
+
+searchUserName = ""
 
 class ViewController: UIViewController {
     @IBOutlet weak var userSearchBar: UISearchBar!
@@ -77,15 +79,15 @@ class ViewController: UIViewController {
         for i in inAllUsers.avatar_urls{
             self.usersAva.append(i.avatar_url)
         }
-        searchResult = self.usersLogins
-        //newUsersAva = self.usersAva
-        //newUsersLogins = self.usersLogins
     }
 }
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            usersLogins = searchText.isEmpty ? searchResult: searchResult.filter{ (item: String) -> Bool in
+        searchUserName = userSearchBar.text ?? ""
+        let viewModel = AllUsersViewModel()
+        viewModel.infoSearchDelegate = self
+        usersLogins = searchText.isEmpty ? searchResult: searchResult.filter{ (item: String) -> Bool in
                 return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
             }
         for (i, j) in searchUsersLogins.enumerated(){
@@ -97,6 +99,14 @@ extension ViewController: UISearchBarDelegate{
             }
         }
         allUsersTable.reloadData()
+    }
+}
+
+extension ViewController: uploadSearchUsersInfo {
+    func uploadSearching(logins: [String], avatar_urls: [String]) {
+        self.searchUsersAva = avatar_urls
+        self.usersLogins = logins
+        self.searchResult = self.usersLogins
     }
 }
 

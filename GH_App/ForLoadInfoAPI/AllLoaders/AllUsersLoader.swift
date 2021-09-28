@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 class AllUsersLoader{
-    
     func loadAllUsersInfo(completion: @escaping ([[AllUsersInfo.Info_Mass]]) -> Void){
         AF.request(URL(string: URLs().allUsersURL)!)
         .validate()
