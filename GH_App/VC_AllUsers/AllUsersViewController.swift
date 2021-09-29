@@ -104,9 +104,9 @@ extension ViewController: UISearchBarDelegate{
 
 extension ViewController: uploadSearchUsersInfo {
     func uploadSearching(logins: [String], avatar_urls: [String]) {
-        print(avatar_urls)
         self.searchUsersAva = avatar_urls
         self.usersLogins = logins
+        self.usersAva = avatar_urls
         self.searchResult = self.usersLogins
         self.allUsersTable.reloadData()
     }
@@ -115,15 +115,26 @@ extension ViewController: uploadSearchUsersInfo {
 extension ViewController: UITableViewDataSource{
 
     func tableView(_ tableView_Alam: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return usersLogins.count
+        var countCells = 0
+        if usersLogins.isEmpty{
+            countCells = 1
+        }else{
+            countCells = usersLogins.count
+        }
+        return countCells
     }
 
     func tableView(_ tableView_Alam: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView_Alam.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! AllUsersTableViewCell
         
-        cell.userNameLabel.text = usersLogins[indexPath.row]
-        AvatarLoader().newAvatarLoader(ava_url: usersAva[indexPath.row], myImageView: cell.userImage)
+        if usersLogins.isEmpty{
+            cell.userNameLabel.text = "User with login \(searchUserName) not found"
+            cell.userImage.image = .none
+        }else{
+            cell.userNameLabel.text = usersLogins[indexPath.row]
+            AvatarLoader().newAvatarLoader(ava_url: usersAva[indexPath.row], myImageView: cell.userImage)
+        }
         return cell
     }
 }
