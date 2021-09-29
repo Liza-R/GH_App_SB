@@ -98,15 +98,17 @@ extension ViewController: UISearchBarDelegate{
                 }
             }
         }
-        allUsersTable.reloadData()
+        self.allUsersTable.reloadData()
     }
 }
 
 extension ViewController: uploadSearchUsersInfo {
     func uploadSearching(logins: [String], avatar_urls: [String]) {
+        print(avatar_urls)
         self.searchUsersAva = avatar_urls
         self.usersLogins = logins
         self.searchResult = self.usersLogins
+        self.allUsersTable.reloadData()
     }
 }
 
