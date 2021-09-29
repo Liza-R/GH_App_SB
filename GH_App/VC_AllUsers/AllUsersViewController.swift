@@ -13,7 +13,8 @@ var savingAllUsers = BehaviorRelay<Bool>(value: false),
     savingAllSearchUsers = BehaviorRelay<Bool>(value: false),
 
 searchUserName = "",
-chooseLogin = ""
+chooseLogin = "",
+startSearch = false
 
 class ViewController: UIViewController {
     @IBOutlet weak var userSearchBar: UISearchBar!
@@ -63,7 +64,7 @@ class ViewController: UIViewController {
           .subscribe(onNext: { indexPath in
               chooseLogin = self.usersLogins[indexPath.row]
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyboard.instantiateViewController(withIdentifier: "showUser") as! UserViewController
+            let newViewController = storyboard.instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
             self.present(newViewController, animated: true, completion: nil)
           }).disposed(by: disposeBag)
         
@@ -101,6 +102,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        startSearch = true
         searchUserName = userSearchBar.text ?? ""
         let viewModel = AllUsersViewModel()
         viewModel.infoSearchDelegate = self

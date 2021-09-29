@@ -156,7 +156,7 @@
 			children = (
 				2043E13F26F9EA0C00FD3667 /* Info.plist */,
 				2043E13726F9EA0B00FD3667 /* Main.storyboard */,
-				2043E17C26F9ED5200FD3667 /* AllAlerts */,
+				2043E17C26F9ED5200FD3667 /* Alerts */,
 				2043E16726F9EC0100FD3667 /* ForLoadInfoAPI */,
 				2087888526FA252C00C09E9A /* SaveInfoRealm */,
 				2043E16226F9EA3F00FD3667 /* VC_AllUsers */,
@@ -248,12 +248,12 @@
 			path = VC_User;
 			sourceTree = "<group>";
 		};
-		2043E17C26F9ED5200FD3667 /* AllAlerts */ = {
+		2043E17C26F9ED5200FD3667 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
 				2043E17D26F9ED6D00FD3667 /* AllUsersSearchAlerts.swift */,
 			);
-			path = AllAlerts;
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		2087888526FA252C00C09E9A /* SaveInfoRealm */ = {

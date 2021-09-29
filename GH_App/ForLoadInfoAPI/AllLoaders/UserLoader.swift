@@ -9,14 +9,14 @@ import Foundation
 import Alamofire
 
 class UserLoader{
-    func loadUserInfo(completion: @escaping ([UserInfo.All_User_Info]) -> Void){
+    func loadUserInfo(completion: @escaping (UserInfo.Info_User) -> Void){
         AF.request(URL(string: URLs().userURL)!)
         .validate()
-            .responseDecodable(of: UserInfo.All_User_Info.self) { (response) in
+            .responseDecodable(of: UserInfo.Info_User.self) { (response) in
                 let errors = response.error as Any
                 print(String(describing: errors), "error --> load user info")
                 guard let user_info = response.value else { return }
-                completion([user_info])
+                completion(user_info)
         }
     }
 }

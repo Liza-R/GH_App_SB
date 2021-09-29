@@ -19,19 +19,18 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let viewModel = UserViewModel()
+        viewModel.infoUserDelegate = self
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension UserViewController: uploadUserInfo {
+    func uploadUInfo(login: String, avatar_url: String, repos_url: String, name: String, company: String, location: String, public_repos_c: Int, email: String){
+        AvatarLoader().newAvatarLoader(ava_url: avatar_url, myImageView: self.userIcon)
+        self.userNameLabel.text = login
+        self.nameLabel.text = "Name: \(name)"
+        self.companyLabel.text = "Company: \(company)"
+        self.locationLabel.text = "Location: \(location)"
+        self.PubReposCountLabel.text = "Public repos: \(public_repos_c)"
+        self.emailLabel.text = "Email: \(email)"
     }
-    */
-
 }

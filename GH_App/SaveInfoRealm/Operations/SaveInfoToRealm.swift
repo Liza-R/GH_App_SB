@@ -30,6 +30,6 @@ class SaveInfo{
             realm.add(infoUser)
         }
         savingAllUsers.accept(true)
-        //RemoveOldWeatherInfo().removeOldCurrentInfo()
+        RemoveOldInfo().removeOldUsersInfo()
     }
 }
