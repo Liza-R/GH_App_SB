@@ -12,7 +12,8 @@ import RxSwift
 var savingAllUsers = BehaviorRelay<Bool>(value: false),
     savingAllSearchUsers = BehaviorRelay<Bool>(value: false),
 
-searchUserName = ""
+searchUserName = "",
+chooseLogin = ""
 
 class ViewController: UIViewController {
     @IBOutlet weak var userSearchBar: UISearchBar!
@@ -49,6 +50,22 @@ class ViewController: UIViewController {
                 self.allUsersTable.reloadData()
             }else{}
         }.disposed(by: disposeBag)
+        
+        userSearchBar.rx.text
+            .asObservable()
+            .subscribe{ [self]searchS in
+                if searchS.element == ""{
+                    self.uploadNOEmptyUsersInfo()
+                }else{}
+        }.disposed(by: disposeBag)
+        
+        self.allUsersTable.rx.itemSelected
+          .subscribe(onNext: { indexPath in
+              chooseLogin = self.usersLogins[indexPath.row]
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyboard.instantiateViewController(withIdentifier: "showUser") as! UserViewController
+            self.present(newViewController, animated: true, completion: nil)
+          }).disposed(by: disposeBag)
         
         self.allUsersTable.rowHeight = 120
         self.allUsersTable.reloadData()

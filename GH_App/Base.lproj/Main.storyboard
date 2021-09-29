@@ -35,7 +35,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="120" id="zW9-Fd-MAa" customClass="AllUsersTableViewCell" customModule="GH_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="120" id="zW9-Fd-MAa" customClass="AllUsersTableViewCell" customModule="GH_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zW9-Fd-MAa" id="uF6-fB-uih">
@@ -114,7 +114,7 @@
         <!--User View Controller-->
         <scene sceneID="QmU-cJ-kTx">
             <objects>
-                <viewController id="ZK8-Ns-G3H" customClass="UserViewController" customModule="GH_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserViewController" id="ZK8-Ns-G3H" customClass="UserViewController" customModule="GH_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jn7-f7-VyU">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
