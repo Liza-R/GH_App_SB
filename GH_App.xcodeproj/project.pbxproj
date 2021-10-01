@@ -28,6 +28,7 @@
 		2043E18026F9F7B000FD3667 /* UserReposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */; };
 		206AAEB826FF15610003DD5E /* SearchUsersStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AAEB726FF15610003DD5E /* SearchUsersStruct.swift */; };
 		206AAEBA26FF15F60003DD5E /* SearchResultsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */; };
+		206AAEC0270706CE0003DD5E /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AAEBF270706CE0003DD5E /* Formatter.swift */; };
 		2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087883F26FA1B4C00C09E9A /* RepoStruct.swift */; };
 		2087888026FA210800C09E9A /* RepoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087887F26FA210800C09E9A /* RepoLoader.swift */; };
 		2087888826FA259400C09E9A /* AllUsersObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888726FA259400C09E9A /* AllUsersObj.swift */; };
@@ -83,6 +84,7 @@
 		2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReposTableViewCell.swift; sourceTree = "<group>"; };
 		206AAEB726FF15610003DD5E /* SearchUsersStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersStruct.swift; sourceTree = "<group>"; };
 		206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsLoader.swift; sourceTree = "<group>"; };
+		206AAEBF270706CE0003DD5E /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		2087883F26FA1B4C00C09E9A /* RepoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoStruct.swift; sourceTree = "<group>"; };
 		2087887F26FA210800C09E9A /* RepoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoLoader.swift; sourceTree = "<group>"; };
 		2087888726FA259400C09E9A /* AllUsersObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersObj.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				2043E17826F9ED1300FD3667 /* UserViewController.swift */,
 				2043E17626F9ED0900FD3667 /* UserViewModel.swift */,
 				2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */,
+				206AAEBF270706CE0003DD5E /* Formatter.swift */,
 			);
 			path = VC_User;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				2043E17E26F9ED6D00FD3667 /* Main_VC_Alerts.swift in Sources */,
 				2043E17226F9ECBD00FD3667 /* AllUsersLoader.swift in Sources */,
 				2043E16C26F9EC7700FD3667 /* AllUsersStruct.swift in Sources */,
+				206AAEC0270706CE0003DD5E /* Formatter.swift in Sources */,
 				2043E18026F9F7B000FD3667 /* UserReposTableViewCell.swift in Sources */,
 				2043E17926F9ED1300FD3667 /* UserViewController.swift in Sources */,
 				2043E17B26F9ED4100FD3667 /* AllUsersTableViewCell.swift in Sources */,

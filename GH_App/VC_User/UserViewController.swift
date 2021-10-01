@@ -29,7 +29,7 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         let viewModel = UserViewModel()
         viewModel.infoUserDelegate = self
-        self.allReposTable.rowHeight = 200
+        self.allReposTable.rowHeight = 160
         self.allReposTable.reloadData()
         self.allReposTable.dataSource = self
     }
@@ -66,14 +66,13 @@ extension UserViewController: UITableViewDataSource{
     func tableView(_ tableView_Alam: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView_Alam.dequeueReusableCell(withIdentifier: "repoCell", for: indexPath) as! UserReposTableViewCell
-        cell.repoCreateLabel.text = self.create_dates[indexPath.row]
+        cell.repoCreateLabel.text = "Create: \(Formatter().formatteDate(date: create_dates[indexPath.row]))"
         cell.repoDescriptLabel.text = self.description_repo[indexPath.row]
         cell.repoLangLabel.text = lang_repo[indexPath.row]
         cell.repoNameLabel.text = repo_names[indexPath.row]
-        cell.repoUpdateLabel.text = update_dates[indexPath.row]
-        cell.repoPushLabel.text = push_dates[indexPath.row]
-        cell.repoStatusLabel.text = "Private: \(repo_privates[indexPath.row])"
-        
+        cell.repoUpdateLabel.text = "Last update: \(Formatter().formatteDate(date:update_dates[indexPath.row]))"
+        cell.repoPushLabel.text = "Push: \(Formatter().formatteDate(date:push_dates[indexPath.row]))"
+        cell.repoStatusLabel.text = "Private: \(Formatter().formattePrivate(status: repo_privates[indexPath.row]))"
         return cell
     }
 }

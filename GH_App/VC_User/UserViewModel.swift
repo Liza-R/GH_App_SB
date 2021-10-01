@@ -46,11 +46,11 @@ class UserViewModel{
                     for i in j{
                         repo_names.append(i.name)
                         repo_privates.append(i.private)
-                        description_repo.append(i.description ?? "Descript Not Found")
+                        description_repo.append(i.description ?? "Description Not Found")
                         create_dates.append(i.created_at)
                         update_dates.append(i.updated_at)
                         push_dates.append(i.pushed_at)
-                        lang_repo.append(i.language ?? "Lang Not Found")
+                        lang_repo.append(i.language ?? "Languge Not Found")
                     }
                 }
                 self.infoUserDelegate?.uploadRepos(repo_names: repo_names, repo_privates: repo_privates, description: description_repo, create_dates: create_dates, update_dates: update_dates, push_dates: push_dates, lang_repo: lang_repo)
