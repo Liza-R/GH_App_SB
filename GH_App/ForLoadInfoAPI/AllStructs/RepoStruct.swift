@@ -12,15 +12,15 @@ class RepoInfo{
         var info_repo: [Info_Repo_Mass?]
     }
     struct Info_Repo_Mass: Decodable{
-        var info_repo_mass: [Repo_Info?]
+        var info_repo_mass: Repo_Info?
     }
     struct Repo_Info: Decodable{
         var name: String,
             `private`: Bool,
-            description: String,
-            languages_url: String,
+            description: String?,
             created_at: String,
             updated_at: String,
-            pushed_at: String
+            pushed_at: String,
+            language: String?
     }
 }

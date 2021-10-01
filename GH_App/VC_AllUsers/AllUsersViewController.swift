@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 
 var savingAllUsers = BehaviorRelay<Bool>(value: false),
-    savingAllSearchUsers = BehaviorRelay<Bool>(value: false),
+    offlineErrorUpload = BehaviorRelay<Bool>(value: false),
 
 searchUserName = "",
 chooseLogin = "",
@@ -52,6 +52,12 @@ class ViewController: UIViewController {
             }else{}
         }.disposed(by: disposeBag)
         
+        offlineErrorUpload.asObservable().subscribe{ status in
+            if status.element == true{
+                Alerts().offlineAlert(vc: self, error: "The Internet connection appears to be offline")
+            }else{}
+        }.disposed(by: disposeBag)
+        
         userSearchBar.rx.text
             .asObservable()
             .subscribe{ [self]searchS in
@@ -87,15 +93,17 @@ class ViewController: UIViewController {
     }
     
     func uploadNOEmptyUsersInfo(){
-        let inAllUsers = self.allUsersInfoRealm.last!
-        self.usersLogins.removeAll()
-        self.usersAva.removeAll()
-        
-        for i in inAllUsers.logins{
-            self.usersLogins.append(i.login)
-        }
-        for i in inAllUsers.avatar_urls{
-            self.usersAva.append(i.avatar_url)
+        if self.allUsersInfoRealm.isEmpty == false{
+            let inAllUsers = self.allUsersInfoRealm.last!
+            self.usersLogins.removeAll()
+            self.usersAva.removeAll()
+            
+            for i in inAllUsers.logins{
+                self.usersLogins.append(i.login)
+            }
+            for i in inAllUsers.avatar_urls{
+                self.usersAva.append(i.avatar_url)
+            }
         }
     }
 }

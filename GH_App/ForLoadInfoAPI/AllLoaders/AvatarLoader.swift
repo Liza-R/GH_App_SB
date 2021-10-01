@@ -16,7 +16,7 @@ class AvatarLoader{
              case .success(let responseData):
                  myImageView.image = UIImage(data: responseData!, scale:1)
              case .failure(let error):
-                 print("error--->",error)
+            print("error---> avatar loading", error, response.response?.statusCode as Any)
              }
         }
     }

@@ -9,12 +9,12 @@ import Foundation
 import Alamofire
 
 class RepoLoader{
-    func loadRepoInfo(completion: @escaping ([RepoInfo.All_Repo_Info]) -> Void){
-        AF.request(URL(string: URLs().userURL)!)
+    func loadRepoInfo(completion: @escaping ([[RepoInfo.Repo_Info]]) -> Void){
+        AF.request(URL(string: URLs().repoURL)!)
         .validate()
-            .responseDecodable(of: RepoInfo.All_Repo_Info.self) { (response) in
+            .responseDecodable(of: [RepoInfo.Repo_Info].self) { (response) in
                 let errors = response.error as Any
-                print(String(describing: errors), "error --> load repo info")
+                print(String(describing: errors), "error --> load repo info", response.response?.statusCode as Any)
                 guard let repo_info = response.value else { return }
                 completion([repo_info])
         }
