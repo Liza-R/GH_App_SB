@@ -37,18 +37,12 @@ class ViewController: UIViewController {
         self.allUsersTable.addSubview(refreshControl)
         self.userSearchBar.delegate = self
         
-        switch allUsersInfoRealm.isEmpty {
-        case true:
-            print("The database is empty. Trying to download new information")
-        case false:
-            uploadNOEmptyUsersInfo()
-        }
-        AllUsersViewModel().uploadAllUsersInfo()
+        CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersTable: self.allUsersTable)
+        
         
         savingAllUsers.asObservable().subscribe{ status in
             if status.element == true{
-                self.uploadNOEmptyUsersInfo()
-                self.allUsersTable.reloadData()
+                RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
             }else{}
         }.disposed(by: disposeBag)
         
@@ -58,37 +52,23 @@ class ViewController: UIViewController {
             }else{}
         }.disposed(by: disposeBag)
         
-        userSearchBar.rx.text
-            .asObservable()
-            .subscribe{ [self]searchS in
+        userSearchBar.rx.text.asObservable().subscribe{ searchS in
                 if searchS.element == ""{
-                    self.uploadNOEmptyUsersInfo()
+                    RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
                 }else{}
         }.disposed(by: disposeBag)
         
         self.allUsersTable.rx.itemSelected
           .subscribe(onNext: { indexPath in
-              chooseLogin = self.usersLogins[indexPath.row]
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyboard.instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
-            self.present(newViewController, animated: true, completion: nil)
+              RxMotions().openNewVC(vc: self, usersLogins: self.usersLogins, indPath: indexPath)
           }).disposed(by: disposeBag)
         
         self.allUsersTable.rowHeight = 120
-        self.allUsersTable.reloadData()
         self.allUsersTable.dataSource = self
     }
-    
+
     @objc func refresh(_ sender: AnyObject) {
-        switch allUsersInfoRealm.isEmpty {
-        case true:
-            print("The database is empty. Trying to download new information")
-        case false:
-            uploadNOEmptyUsersInfo()
-            print("Refreshing allUsersTable")
-        }
-        AllUsersViewModel().uploadAllUsersInfo()
-        self.allUsersTable.reloadData()
+        CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersTable: self.allUsersTable)
         self.refreshControl.endRefreshing()
     }
     
@@ -97,7 +77,6 @@ class ViewController: UIViewController {
             let inAllUsers = self.allUsersInfoRealm.last!
             self.usersLogins.removeAll()
             self.usersAva.removeAll()
-            
             for i in inAllUsers.logins{
                 self.usersLogins.append(i.login)
             }

@@ -36,6 +36,8 @@
 		2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */; };
 		2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889126FA260200C09E9A /* ReturnModelsDB.swift */; };
 		2087889726FA321200C09E9A /* AvatarLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889626FA321200C09E9A /* AvatarLoader.swift */; };
+		20A9B166271C19B6003C4268 /* CheckDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B165271C19B6003C4268 /* CheckDataBase.swift */; };
+		20A9B168271C1B8E003C4268 /* RxVariablesMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B167271C1B8E003C4268 /* RxVariablesMotions.swift */; };
 		95B915FF4CB556B6365FBB54 /* Pods_GH_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldInfo.swift; sourceTree = "<group>"; };
 		2087889126FA260200C09E9A /* ReturnModelsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnModelsDB.swift; sourceTree = "<group>"; };
 		2087889626FA321200C09E9A /* AvatarLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarLoader.swift; sourceTree = "<group>"; };
+		20A9B165271C19B6003C4268 /* CheckDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataBase.swift; sourceTree = "<group>"; };
+		20A9B167271C1B8E003C4268 /* RxVariablesMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxVariablesMotions.swift; sourceTree = "<group>"; };
 		753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.debug.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F551BA2F9CBDBB27C5EF23A4 /* Pods-GH_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.release.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		2043E16226F9EA3F00FD3667 /* VC_AllUsers */ = {
 			isa = PBXGroup;
 			children = (
+				20A9B164271C199C003C4268 /* FunctionsVC */,
 				2043E13526F9EA0B00FD3667 /* AllUsersViewController.swift */,
 				2043E16326F9EA5800FD3667 /* AllUsersViewModel.swift */,
 				2043E17A26F9ED4100FD3667 /* AllUsersTableViewCell.swift */,
@@ -284,6 +289,15 @@
 				2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */,
 			);
 			path = Operations;
+			sourceTree = "<group>";
+		};
+		20A9B164271C199C003C4268 /* FunctionsVC */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B165271C19B6003C4268 /* CheckDataBase.swift */,
+				20A9B167271C1B8E003C4268 /* RxVariablesMotions.swift */,
+			);
+			path = FunctionsVC;
 			sourceTree = "<group>";
 		};
 		70BE9703F52697B8673F9B08 /* Pods */ = {
@@ -482,6 +496,7 @@
 				2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */,
 				2043E17726F9ED0900FD3667 /* UserViewModel.swift in Sources */,
 				2087888026FA210800C09E9A /* RepoLoader.swift in Sources */,
+				20A9B168271C1B8E003C4268 /* RxVariablesMotions.swift in Sources */,
 				206AAEB826FF15610003DD5E /* SearchUsersStruct.swift in Sources */,
 				2043E16926F9EC2400FD3667 /* AllURLs.swift in Sources */,
 				2087888826FA259400C09E9A /* AllUsersObj.swift in Sources */,
@@ -492,6 +507,7 @@
 				2043E16426F9EA5800FD3667 /* AllUsersViewModel.swift in Sources */,
 				2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */,
 				2043E13426F9EA0B00FD3667 /* SceneDelegate.swift in Sources */,
+				20A9B166271C19B6003C4268 /* CheckDataBase.swift in Sources */,
 				2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
