@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 class Alerts{
-    func offlineAlert(vc: UIViewController, error: String){
-        let alert = UIAlertController(title: "Error", message: error, preferredStyle: UIAlertController.Style.actionSheet),
+    func offlineAlert(vc: UIViewController){
+        let alert = UIAlertController(title: "Not Connection", message: "Please check your connection and connect the internet", preferredStyle: UIAlertController.Style.actionSheet),
         cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
          alert.addAction(cancelAction)
          alert.pruneNegativeWidthConstraints()

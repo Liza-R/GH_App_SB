@@ -16,7 +16,7 @@ class ConnectionActions{
             CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersTable: allUsersTable)
         }else{
             print("No! internet is not available.")
-            Alerts().offlineAlert(vc: vc, error: "The Internet connection appears to be offline")
+            Alerts().offlineAlert(vc: vc)
         }
     }
 }

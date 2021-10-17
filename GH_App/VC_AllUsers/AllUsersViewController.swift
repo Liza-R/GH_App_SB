@@ -85,22 +85,29 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        startSearch = true
-        searchUserName = userSearchBar.text ?? ""
-        let viewModel = AllUsersViewModel()
-        viewModel.infoSearchDelegate = self
-        usersLogins = searchText.isEmpty ? searchResult: searchResult.filter{ (item: String) -> Bool in
-                return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-            }
-        for (i, j) in searchUsersLogins.enumerated(){
-            for (k, m) in usersLogins.enumerated(){
-                if j == m{
-                    self.usersAva[k] = searchUsersAva[i]
-                    self.usersLogins[k] = searchUsersLogins[i]
+        if Connectivity.isConnectedToInternet {
+            print("Yes! internet is available.")
+            startSearch = true
+            searchUserName = userSearchBar.text ?? ""
+            let viewModel = AllUsersViewModel()
+            viewModel.infoSearchDelegate = self
+            usersLogins = searchText.isEmpty ? searchResult: searchResult.filter{ (item: String) -> Bool in
+                    return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+                }
+            for (i, j) in searchUsersLogins.enumerated(){
+                for (k, m) in usersLogins.enumerated(){
+                    if j == m{
+                        self.usersAva[k] = searchUsersAva[i]
+                        self.usersLogins[k] = searchUsersLogins[i]
+                    }
                 }
             }
+            self.allUsersTable.reloadData()
+        }else{
+            startSearch = false
+            print("No! internet is not available.")
+            Alerts().offlineAlert(vc: self)
         }
-        self.allUsersTable.reloadData()
     }
 }
 

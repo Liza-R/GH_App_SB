@@ -10,14 +10,22 @@ import UIKit
 import Alamofire
 
 class AvatarLoader{
-    func newAvatarLoader(ava_url: String, myImageView: UIImageView){
-        AF.request(ava_url ,method: .get).response{ response in
-        switch response.result {
-             case .success(let responseData):
-                 myImageView.image = UIImage(data: responseData!, scale:1)
-             case .failure(let error):
-            print("error---> avatar loading", error, response.response?.statusCode as Any)
-             }
+    func uploadAvatarsAndSaveInfo(ava_urls: [String], user_logins: [String]){
+        var avatars: [NSData] = []
+        for (_, j) in ava_urls.enumerated(){
+            AF.request(j ,method: .get).response{ response in
+            switch response.result {
+            case .success(let responseData):
+                let icon = UIImage(data: responseData!, scale:1) ?? .checkmark
+                avatars.append(NSData(data: icon.pngData()!))
+                if avatars.count == user_logins.count{
+                    SaveInfo().savingAllUsersInfo(logins: user_logins, avatars: avatars)
+                }
+                
+                 case .failure(let error):
+                print("error---> avatar loading", error, response.response?.statusCode as Any)
+                 }
+            }
         }
     }
 }
