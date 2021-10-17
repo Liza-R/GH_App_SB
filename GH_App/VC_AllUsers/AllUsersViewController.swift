@@ -10,7 +10,6 @@ import RxCocoa
 import RxSwift
 
 var savingAllUsers = BehaviorRelay<Bool>(value: false),
-    offlineErrorUpload = BehaviorRelay<Bool>(value: false),
 
 searchUserName = "",
 chooseLogin = "",
@@ -39,19 +38,12 @@ class ViewController: UIViewController {
         
         CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersTable: self.allUsersTable)
         
-        
         savingAllUsers.asObservable().subscribe{ status in
             if status.element == true{
                 RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
             }else{}
         }.disposed(by: disposeBag)
-        
-        offlineErrorUpload.asObservable().subscribe{ status in
-            if status.element == true{
-                Alerts().offlineAlert(vc: self, error: "The Internet connection appears to be offline")
-            }else{}
-        }.disposed(by: disposeBag)
-        
+
         userSearchBar.rx.text.asObservable().subscribe{ searchS in
                 if searchS.element == ""{
                     RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
@@ -68,8 +60,8 @@ class ViewController: UIViewController {
     }
 
     @objc func refresh(_ sender: AnyObject) {
-        CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersTable: self.allUsersTable)
-        self.refreshControl.endRefreshing()
+        ConnectionActions().checkIntenet(vc: self, allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersInfoRealm: self.allUsersInfoRealm)
+        refreshControl.endRefreshing()
     }
     
     func uploadNOEmptyUsersInfo(){
@@ -84,6 +76,10 @@ class ViewController: UIViewController {
                 self.usersAva.append(i.avatar_url)
             }
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ConnectionActions().checkIntenet(vc: self, allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersInfoRealm: self.allUsersInfoRealm)
     }
 }
 

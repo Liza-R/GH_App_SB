@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class RxMotions{
     func allUsersSaving(allUsersTable: UITableView, uploadNOEmptyUsersInfo: @escaping() -> Void){
