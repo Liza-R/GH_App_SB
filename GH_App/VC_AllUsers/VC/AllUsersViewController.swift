@@ -13,8 +13,7 @@ var savingAllUsers = BehaviorRelay<Bool>(value: false),
 
 searchUserName = "",
 chooseLogin = "",
-startSearch = false
-
+errorLoad = BehaviorRelay<Int>(value: 0)
 
 class ViewController: UIViewController {
     @IBOutlet weak var userSearchBar: UISearchBar!
@@ -69,6 +68,12 @@ class ViewController: UIViewController {
             }
         }.disposed(by: disposeBag)
 
+        errorLoad.asObservable().subscribe{ error in
+            if error.element == 403{
+                Alerts().error403Alert(vc: self)
+            }
+        }.disposed(by: disposeBag)
+        
         self.allUsersTable.rx.itemSelected.subscribe(onNext: { indexPath in
               RxMotions().openNewVC(vc: self, usersLogins: self.usersLogins, indPath: indexPath)
         }).disposed(by: disposeBag)

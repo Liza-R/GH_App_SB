@@ -16,6 +16,13 @@ class Alerts{
          alert.pruneNegativeWidthConstraints()
          vc.present(alert, animated: true, completion: nil)
     }
+    func error403Alert(vc: UIViewController){
+        let alert = UIAlertController(title: "Error", message: "403", preferredStyle: UIAlertController.Style.actionSheet),
+        cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
+         alert.addAction(cancelAction)
+         alert.pruneNegativeWidthConstraints()
+         vc.present(alert, animated: true, completion: nil)
+    }
 }
 extension UIAlertController {
     func pruneNegativeWidthConstraints() {

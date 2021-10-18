@@ -14,6 +14,7 @@ class AllSearchUsersLoader{
         .validate()
         .responseDecodable(of: AllSearchUsers.All_Search_Info.self) { (response) in
             print(String(describing: response.error as Any), "error --> load seraching user", response.response?.statusCode as Any)
+            errorLoad.accept(response.response?.statusCode ?? 0)
             guard let all_search_users_info = response.value else { return }
                 completion([all_search_users_info])
         }

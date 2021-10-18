@@ -276,8 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				2043E17126F9ECBD00FD3667 /* AllUsersLoader.swift */,
-				2087889626FA321200C09E9A /* AvatarLoader.swift */,
 				206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */,
+				2087889626FA321200C09E9A /* AvatarLoader.swift */,
 			);
 			path = Loaders;
 			sourceTree = "<group>";
