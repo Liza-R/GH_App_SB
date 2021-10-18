@@ -10,15 +10,16 @@ import RealmSwift
 import UIKit
 
 class CheckDataBase{
-    func outputInfoFromDataBase(allUsersInfoRealm: Results<AllUsersInfoDB>, uploadNOEmptyUsersInfo: () -> Void, allUsersTable: UITableView){
+    func outputInfoFromDataBase(allUsersInfoRealm: Results<AllUsersInfoDB>, uploadNOEmptyUsersInfo: () -> Void){
+        print("-Start CheckDataBase")
         switch allUsersInfoRealm.isEmpty {
         case true:
-            print("The database is empty")
+            print("--The database is empty")
         case false:
-            print("The database is not empty. Upload old info")
+            print("--The database is not empty. Upload old info")
             uploadNOEmptyUsersInfo()
         }
         AllUsersViewModel().uploadAllUsersInfo()
-        allUsersTable.reloadData()
+        print("-Stop CheckDataBase")
     }
 }

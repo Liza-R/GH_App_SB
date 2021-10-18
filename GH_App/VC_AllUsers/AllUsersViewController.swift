@@ -31,19 +31,57 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Start ViewDidLoad")
+        allUsersTable.reloadData()
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         refreshControl.tintColor = .white
         self.allUsersTable.addSubview(refreshControl)
         self.userSearchBar.delegate = self
         
-        CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersTable: self.allUsersTable)
+        CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo)
+
+        self.allUsersTable.rowHeight = 120
+        self.allUsersTable.reloadData()
+        self.allUsersTable.dataSource = self
+        print("Stop ViewDidLoad")
+    }
+
+    @objc func refresh(_ sender: AnyObject) {
+        ConnectionActions().checkIntenet(vc: self, allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersInfoRealm: self.allUsersInfoRealm, refreshStatus: true, refresh: self.refreshControl)
+    }
+    
+    func uploadNOEmptyUsersInfo(){
+        print("---Start uploadNOEmptyUsersInfo")
+        if self.allUsersInfoRealm.isEmpty == false{
+            print("----DataBase is not empty")
+            let inAllUsers = self.allUsersInfoRealm.last!
+            print("-----Output last info to database")
+            self.usersLogins.removeAll()
+            self.usersAva.removeAll()
+            for i in inAllUsers.logins{
+                self.usersLogins.append(i.login)
+            }
+            for i in inAllUsers.avatars{
+                self.usersAva.append(i.avatar)
+            }
+        }else{
+            print("----DataBase is empty")
+        }
+        print("---Stop uploadNOEmptyUsersInfo")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("Start ViewDidAppear")
+        ConnectionActions().checkIntenet(vc: self, allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersInfoRealm: self.allUsersInfoRealm, refreshStatus: false, refresh: self.refreshControl)
         
         savingAllUsers.asObservable().subscribe{ status in
             if status.element == true{
+                print("Saving new data is complite")
                 RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
-            }else{}
+            }
         }.disposed(by: disposeBag)
-
+        
         userSearchBar.rx.text.asObservable().subscribe{ searchS in
                 if searchS.element == ""{
                     RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
@@ -54,32 +92,7 @@ class ViewController: UIViewController {
           .subscribe(onNext: { indexPath in
               RxMotions().openNewVC(vc: self, usersLogins: self.usersLogins, indPath: indexPath)
           }).disposed(by: disposeBag)
-        
-        self.allUsersTable.rowHeight = 120
-        self.allUsersTable.dataSource = self
-    }
-
-    @objc func refresh(_ sender: AnyObject) {
-        ConnectionActions().checkIntenet(vc: self, allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersInfoRealm: self.allUsersInfoRealm, refreshStatus: true)
-        refreshControl.endRefreshing()
-    }
-    
-    func uploadNOEmptyUsersInfo(){
-        if self.allUsersInfoRealm.isEmpty == false{
-            let inAllUsers = self.allUsersInfoRealm.last!
-            self.usersLogins.removeAll()
-            self.usersAva.removeAll()
-            for i in inAllUsers.logins{
-                self.usersLogins.append(i.login)
-            }
-            for i in inAllUsers.avatars{
-                self.usersAva.append(i.avatar)
-            }
-        }
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        ConnectionActions().checkIntenet(vc: self, allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersInfoRealm: self.allUsersInfoRealm, refreshStatus: false)
+        print("Stop ViewDidAppear")
     }
 }
 

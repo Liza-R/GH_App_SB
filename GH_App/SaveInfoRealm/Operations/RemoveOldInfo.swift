@@ -10,10 +10,12 @@ import Foundation
 class RemoveOldInfo{
     func removeOldUsersInfo(){
         let modelCurrent = SaveInfo().realm.objects(AllUsersInfoDB.self)
+        print("------Start remove old info")
         if modelCurrent.first != nil && modelCurrent.count > 2{
             try! SaveInfo().realm.write {
                 SaveInfo().realm.delete(modelCurrent.first!)
             }
         }
+        print("------Stop remove old info")
     }
 }

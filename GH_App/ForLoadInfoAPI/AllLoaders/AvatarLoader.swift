@@ -12,6 +12,7 @@ import Alamofire
 class AvatarLoader{
     func uploadAvatarsAndSaveInfo(ava_urls: [String], user_logins: [String]){
         var avatars: [NSData] = []
+        print("----Start upload new avatars")
         for (_, j) in ava_urls.enumerated(){
             AF.request(j ,method: .get).response{ response in
             switch response.result {
@@ -23,9 +24,10 @@ class AvatarLoader{
                 }
                 
                  case .failure(let error):
-                print("error---> avatar loading", error, response.response?.statusCode as Any)
+                    print("error---> avatar loading", error, response.response?.statusCode as Any)
                  }
             }
         }
+        print("----Stop upload new avatars")
     }
 }
