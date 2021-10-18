@@ -168,8 +168,7 @@
 			children = (
 				2043E13F26F9EA0C00FD3667 /* Info.plist */,
 				2043E13726F9EA0B00FD3667 /* Main.storyboard */,
-				2043E16726F9EC0100FD3667 /* ForLoadInfoAPI */,
-				2087888526FA252C00C09E9A /* SaveInfoRealm */,
+				2043E16726F9EC0100FD3667 /* URLs&CheckConnecton */,
 				2043E16226F9EA3F00FD3667 /* VC_AllUsers */,
 				2043E17526F9ECF000FD3667 /* VC_User */,
 				2043E16126F9EA1A00FD3667 /* Other */,
@@ -209,84 +208,30 @@
 		2043E16226F9EA3F00FD3667 /* VC_AllUsers */ = {
 			isa = PBXGroup;
 			children = (
-				20A9B164271C199C003C4268 /* FunctionsVC */,
-				2043E13526F9EA0B00FD3667 /* AllUsersViewController.swift */,
-				2043E16326F9EA5800FD3667 /* AllUsersViewModel.swift */,
-				2043E17A26F9ED4100FD3667 /* AllUsersTableViewCell.swift */,
+				20A9B180271DA9DD003C4268 /* VC */,
+				20A9B176271DA88D003C4268 /* Parsing */,
+				20A9B175271DA87F003C4268 /* DataBase */,
 			);
 			path = VC_AllUsers;
 			sourceTree = "<group>";
 		};
-		2043E16726F9EC0100FD3667 /* ForLoadInfoAPI */ = {
+		2043E16726F9EC0100FD3667 /* URLs&CheckConnecton */ = {
 			isa = PBXGroup;
 			children = (
 				20A9B174271C5588003C4268 /* URLs */,
 				20A9B16E271C29CF003C4268 /* CheckConnect.swift */,
-				2043E16A26F9EC3700FD3667 /* AllStructs */,
-				2043E16F26F9EC9700FD3667 /* AllLoaders */,
 			);
-			path = ForLoadInfoAPI;
-			sourceTree = "<group>";
-		};
-		2043E16A26F9EC3700FD3667 /* AllStructs */ = {
-			isa = PBXGroup;
-			children = (
-				2043E16B26F9EC7700FD3667 /* AllUsersStruct.swift */,
-				206AAEB726FF15610003DD5E /* SearchUsersStruct.swift */,
-				2043E16D26F9EC8200FD3667 /* UserStruct.swift */,
-				2087883F26FA1B4C00C09E9A /* RepoStruct.swift */,
-			);
-			path = AllStructs;
-			sourceTree = "<group>";
-		};
-		2043E16F26F9EC9700FD3667 /* AllLoaders */ = {
-			isa = PBXGroup;
-			children = (
-				2043E17126F9ECBD00FD3667 /* AllUsersLoader.swift */,
-				206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */,
-				2043E17326F9ECC800FD3667 /* UserLoader.swift */,
-				2087887F26FA210800C09E9A /* RepoLoader.swift */,
-				2087889626FA321200C09E9A /* AvatarLoader.swift */,
-			);
-			path = AllLoaders;
+			path = "URLs&CheckConnecton";
 			sourceTree = "<group>";
 		};
 		2043E17526F9ECF000FD3667 /* VC_User */ = {
 			isa = PBXGroup;
 			children = (
-				2043E17826F9ED1300FD3667 /* UserViewController.swift */,
-				2043E17626F9ED0900FD3667 /* UserViewModel.swift */,
-				2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */,
-				206AAEBF270706CE0003DD5E /* Formatter.swift */,
+				20A9B183271DAA69003C4268 /* DataBase */,
+				20A9B181271DAA0B003C4268 /* VC */,
+				20A9B17B271DA94B003C4268 /* Parsing */,
 			);
 			path = VC_User;
-			sourceTree = "<group>";
-		};
-		2087888526FA252C00C09E9A /* SaveInfoRealm */ = {
-			isa = PBXGroup;
-			children = (
-				2087888626FA255500C09E9A /* Objects */,
-				2087889326FA261100C09E9A /* Operations */,
-			);
-			path = SaveInfoRealm;
-			sourceTree = "<group>";
-		};
-		2087888626FA255500C09E9A /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				2087888726FA259400C09E9A /* AllUsersObj.swift */,
-			);
-			path = Objects;
-			sourceTree = "<group>";
-		};
-		2087889326FA261100C09E9A /* Operations */ = {
-			isa = PBXGroup;
-			children = (
-				2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */,
-				2087889126FA260200C09E9A /* ReturnModelsDB.swift */,
-				2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */,
-			);
-			path = Operations;
 			sourceTree = "<group>";
 		};
 		20A9B164271C199C003C4268 /* FunctionsVC */ = {
@@ -307,6 +252,141 @@
 				20A9B172271C5577003C4268 /* ExtensionForURLs.swift */,
 			);
 			path = URLs;
+			sourceTree = "<group>";
+		};
+		20A9B175271DA87F003C4268 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B179271DA8F6003C4268 /* Objects */,
+				20A9B17A271DA901003C4268 /* Operations */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		20A9B176271DA88D003C4268 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B178271DA8C9003C4268 /* Structs */,
+				20A9B177271DA8B6003C4268 /* Loaders */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		20A9B177271DA8B6003C4268 /* Loaders */ = {
+			isa = PBXGroup;
+			children = (
+				2043E17126F9ECBD00FD3667 /* AllUsersLoader.swift */,
+				2087889626FA321200C09E9A /* AvatarLoader.swift */,
+				206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */,
+			);
+			path = Loaders;
+			sourceTree = "<group>";
+		};
+		20A9B178271DA8C9003C4268 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				206AAEB726FF15610003DD5E /* SearchUsersStruct.swift */,
+				2043E16B26F9EC7700FD3667 /* AllUsersStruct.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		20A9B179271DA8F6003C4268 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				2087888726FA259400C09E9A /* AllUsersObj.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		20A9B17A271DA901003C4268 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */,
+				2087889126FA260200C09E9A /* ReturnModelsDB.swift */,
+				2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		20A9B17B271DA94B003C4268 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B17D271DA96B003C4268 /* Structs */,
+				20A9B17C271DA960003C4268 /* Loaders */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		20A9B17C271DA960003C4268 /* Loaders */ = {
+			isa = PBXGroup;
+			children = (
+				2087887F26FA210800C09E9A /* RepoLoader.swift */,
+				2043E17326F9ECC800FD3667 /* UserLoader.swift */,
+			);
+			path = Loaders;
+			sourceTree = "<group>";
+		};
+		20A9B17D271DA96B003C4268 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				2043E16D26F9EC8200FD3667 /* UserStruct.swift */,
+				2087883F26FA1B4C00C09E9A /* RepoStruct.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		20A9B180271DA9DD003C4268 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B164271C199C003C4268 /* FunctionsVC */,
+				2043E13526F9EA0B00FD3667 /* AllUsersViewController.swift */,
+				2043E16326F9EA5800FD3667 /* AllUsersViewModel.swift */,
+				2043E17A26F9ED4100FD3667 /* AllUsersTableViewCell.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		20A9B181271DAA0B003C4268 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B182271DAA27003C4268 /* Funcs */,
+				2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */,
+				2043E17626F9ED0900FD3667 /* UserViewModel.swift */,
+				2043E17826F9ED1300FD3667 /* UserViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		20A9B182271DAA27003C4268 /* Funcs */ = {
+			isa = PBXGroup;
+			children = (
+				206AAEBF270706CE0003DD5E /* Formatter.swift */,
+			);
+			path = Funcs;
+			sourceTree = "<group>";
+		};
+		20A9B183271DAA69003C4268 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B184271DAA73003C4268 /* Objects */,
+				20A9B185271DAA7C003C4268 /* Operations */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		20A9B184271DAA73003C4268 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		20A9B185271DAA7C003C4268 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		70BE9703F52697B8673F9B08 /* Pods */ = {

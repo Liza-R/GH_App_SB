@@ -38,7 +38,7 @@ class AllUsersViewModel{
                         ava_urls.append(j.avatar_url)
                     }
                 }
-                AvatarLoader().uploadAvatarsAndSaveInfo(ava_urls: ava_urls, user_logins: logins)
+                SaveInfo().savingAllUsersInfo(logins: logins, avatar_urls: ava_urls)
                 print("---Stop upload new info VM")
             }
         }

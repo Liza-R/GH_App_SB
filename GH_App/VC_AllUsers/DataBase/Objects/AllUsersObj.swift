@@ -12,10 +12,10 @@ class LoginForAllUsersClass: Object {
     @objc dynamic var login = ""
 }
 class AvatarURLsForAllUsersClass: Object {
-    @objc dynamic var avatar = NSData()
+    @objc dynamic var avatar_url = ""
 }
 
 class AllUsersInfoDB: Object{
     let logins = List<LoginForAllUsersClass>(),
-        avatars = List<AvatarURLsForAllUsersClass>()
+        avatar_urls = List<AvatarURLsForAllUsersClass>()
 }
