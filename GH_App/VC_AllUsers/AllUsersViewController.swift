@@ -20,9 +20,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var allUsersTable: UITableView!
     
     var usersLogins: [String] = [],
-        usersAva: [String] = [],
+        usersAva: [NSData] = [],
         searchUsersLogins: [String] = [],
-        searchUsersAva: [String] = [],
+        searchUsersAva: [NSData] = [],
         searchResult: [String] = [],
         refreshControl = UIRefreshControl(),
         disposeBag = DisposeBag()
@@ -72,8 +72,8 @@ class ViewController: UIViewController {
             for i in inAllUsers.logins{
                 self.usersLogins.append(i.login)
             }
-            for i in inAllUsers.avatar_urls{
-                self.usersAva.append(i.avatar_url)
+            for i in inAllUsers.avatars{
+                self.usersAva.append(i.avatar)
             }
         }
     }
@@ -113,9 +113,9 @@ extension ViewController: UISearchBarDelegate{
 
 extension ViewController: uploadSearchUsersInfo {
     func uploadSearching(logins: [String], avatar_urls: [String]) {
-        self.searchUsersAva = avatar_urls
+        //self.searchUsersAva = avatar_urls
         self.usersLogins = logins
-        self.usersAva = avatar_urls
+        //self.usersAva = avatar_urls
         self.searchResult = self.usersLogins
         self.allUsersTable.reloadData()
     }
@@ -142,7 +142,8 @@ extension ViewController: UITableViewDataSource{
             cell.userImage.image = .none
         }else{
             cell.userNameLabel.text = usersLogins[indexPath.row]
-            AvatarLoader().newAvatarLoader(ava_url: usersAva[indexPath.row], myImageView: cell.userImage)
+            cell.userImage.image = UIImage(data: usersAva[indexPath.row] as Data)
+            //AvatarLoader().newAvatarLoader(ava_url: usersAva[indexPath.row], myImageView: cell.userImage)
         }
         return cell
     }

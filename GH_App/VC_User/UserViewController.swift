@@ -47,7 +47,7 @@ extension UserViewController: uploadUserInfo {
     }
     
     func uploadUInfo(login: String, avatar_url: String, repos_url: String, name: String, company: String, location: String, public_repos_c: Int, email: String){
-        AvatarLoader().newAvatarLoader(ava_url: avatar_url, myImageView: self.userIcon)
+        //AvatarLoader().uploadAvatarsAndSaveInfo(ava_urls: <#T##[String]#>, user_logins: <#T##[String]#>)
         self.userNameLabel.text = login
         self.nameLabel.text = "Name: \(name)"
         self.companyLabel.text = "Company: \(company)"

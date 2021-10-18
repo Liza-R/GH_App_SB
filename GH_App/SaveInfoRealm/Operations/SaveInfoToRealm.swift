@@ -18,7 +18,7 @@ class SaveInfo{
             login.login = i
             infoUser.logins.append(login)
         }
-        for i in avatar{
+        for i in avatars{
             let ava = AvatarURLsForAllUsersClass()
             ava.avatar = i
             infoUser.avatars.append(ava)
