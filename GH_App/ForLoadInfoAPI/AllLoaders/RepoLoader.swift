@@ -13,8 +13,7 @@ class RepoLoader{
         AF.request(URL(string: URLs().repoURL)!)
         .validate()
             .responseDecodable(of: [RepoInfo.Repo_Info].self) { (response) in
-                let errors = response.error as Any
-                print(String(describing: errors), "error --> load repo info", response.response?.statusCode as Any)
+                print(String(describing: response.error as Any), "error --> load repo info", response.response?.statusCode as Any)
                 guard let repo_info = response.value else { return }
                 completion([repo_info])
         }

@@ -13,11 +13,7 @@ class AllUsersLoader{
         AF.request(URL(string: URLs().allUsersURL)!, method: .get)
         .validate()
         .responseDecodable(of: [AllUsersInfo.Info_Mass].self) { (response) in
-            let errors = response.error as Any
-            /*if response.response?.statusCode == nil{
-                offlineErrorUpload.accept(true)
-            }*/
-            print(String(describing: errors), "error --> load all users info", response.response?.statusCode as Any)
+            print(String(describing: response.error as Any), "error --> load all users info", response.response?.statusCode as Any)
             guard let all_users_info = response.value else { return }
                 completion([all_users_info])
         }

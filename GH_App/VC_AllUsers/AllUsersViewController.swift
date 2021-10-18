@@ -143,7 +143,6 @@ extension ViewController: UITableViewDataSource{
         }else{
             cell.userNameLabel.text = usersLogins[indexPath.row]
             cell.userImage.image = UIImage(data: usersAva[indexPath.row] as Data)
-            //AvatarLoader().newAvatarLoader(ava_url: usersAva[indexPath.row], myImageView: cell.userImage)
         }
         return cell
     }

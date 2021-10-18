@@ -13,8 +13,7 @@ class UserLoader{
         AF.request(URL(string: URLs().userURL)!)
         .validate()
             .responseDecodable(of: UserInfo.Info_User.self) { (response) in
-                let errors = response.error as Any
-                print(String(describing: errors), "error --> load user info", response.response?.statusCode as Any)
+                print(String(describing: response.error as Any), "error --> load user info", response.response?.statusCode as Any)
                 guard let user_info = response.value else { return }
                 completion(user_info)
         }
