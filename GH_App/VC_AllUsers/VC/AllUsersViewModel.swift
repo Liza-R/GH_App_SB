@@ -18,10 +18,7 @@ class AllUsersViewModel{
     var infoSearchDelegate: uploadSearchUsersInfo?
     
     init(){
-        if startSearch == true{
-            searchUsersInfo()
-            startSearch = false
-        }
+        searchUsersInfo()
     }
     
     func uploadAllUsersInfo(){

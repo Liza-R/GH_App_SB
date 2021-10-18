@@ -10,11 +10,11 @@ import RxCocoa
 import RxSwift
 
 var savingAllUsers = BehaviorRelay<Bool>(value: false),
-    savingAllSearchUsers = BehaviorRelay<Bool>(value: false),
 
 searchUserName = "",
 chooseLogin = "",
 startSearch = false
+
 
 class ViewController: UIViewController {
     @IBOutlet weak var userSearchBar: UISearchBar!
@@ -68,11 +68,7 @@ class ViewController: UIViewController {
                 RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
             }
         }.disposed(by: disposeBag)
-        
-        userSearchBar.rx.text.asObservable().subscribe{ searchS in
-            RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
-        }.disposed(by: disposeBag)
-        
+
         self.allUsersTable.rx.itemSelected.subscribe(onNext: { indexPath in
               RxMotions().openNewVC(vc: self, usersLogins: self.usersLogins, indPath: indexPath)
         }).disposed(by: disposeBag)
@@ -82,29 +78,16 @@ class ViewController: UIViewController {
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if Connectivity.isConnectedToInternet {
-            startSearch = true
-            searchUserName = userSearchBar.text ?? ""
-            let viewModel = AllUsersViewModel()
-            viewModel.infoSearchDelegate = self
-            usersLogins = searchText.isEmpty ? searchResult: searchResult.filter{ (item: String) -> Bool in
-                    return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-                }
-            for (i, j) in searchUsersLogins.enumerated(){
-                for (k, m) in usersLogins.enumerated(){
-                    if j == m{
-                        self.usersAva[k] = searchUsersAva[i]
-                        self.usersLogins[k] = searchUsersLogins[i]
-                    }
-                }
-            }
+            searchUserName = searchText
+            AllUsersViewModel().infoSearchDelegate = self
+            RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
         }else{
-            startSearch = false
             Alerts().offlineAlert(vc: self)
         }
     }
 }
 
-extension ViewController: uploadSearchUsersInfo {
+extension ViewController: uploadSearchUsersInfo{
     func uploadSearching(logins: [String], avatar_urls: [String]) {
         self.usersLogins = logins
         self.usersAva = avatar_urls
