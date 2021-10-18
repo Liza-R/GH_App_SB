@@ -11,7 +11,6 @@ import UIKit
 
 class CheckDataBase{
     func outputInfoFromDataBase(allUsersInfoRealm: Results<AllUsersInfoDB>, uploadNOEmptyUsersInfo: () -> Void){
-        print("-Start CheckDataBase")
         switch allUsersInfoRealm.isEmpty {
         case true:
             print("--The database is empty")
@@ -20,6 +19,5 @@ class CheckDataBase{
             uploadNOEmptyUsersInfo()
         }
         AllUsersViewModel().uploadAllUsersInfo()
-        print("-Stop CheckDataBase")
     }
 }

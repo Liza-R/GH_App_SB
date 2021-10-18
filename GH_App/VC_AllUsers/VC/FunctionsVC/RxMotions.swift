@@ -11,10 +11,8 @@ import RealmSwift
 
 class RxMotions{
     func allUsersSaving(allUsersTable: UITableView, uploadNOEmptyUsersInfo: @escaping() -> Void){
-        print("-Start rx func for output new info")
         uploadNOEmptyUsersInfo()
         allUsersTable.reloadData()
-        print("--Stop rx func for output new info")
     }
     
     func openNewVC(vc: UIViewController, usersLogins: [String], indPath: IndexPath){

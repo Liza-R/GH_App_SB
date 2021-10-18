@@ -11,7 +11,6 @@ import Alamofire
 
 class AvatarLoader{
     func uploadAvatarsAndSaveInfo(ava_url: String, cellImage: UIImageView){
-        print("----Start upload new avatars")
         AF.request(ava_url ,method: .get).response{ response in
             switch response.result {
                 case .success(let responseData):
@@ -21,6 +20,5 @@ class AvatarLoader{
                     print("error---> avatar loading", error, response.response?.statusCode as Any)
                  }
             }
-        print("----Stop upload new avatars")
     }
 }

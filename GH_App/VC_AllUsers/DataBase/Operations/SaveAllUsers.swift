@@ -12,7 +12,6 @@ class SaveInfo{
     let realm = try! Realm()
     
     func savingAllUsersInfo(logins: [String], avatar_urls: [String]){
-        print("-----Start save new info")
         let infoUser = AllUsersInfoDB()
         for i in logins{
             let login = LoginForAllUsersClass()
@@ -27,7 +26,6 @@ class SaveInfo{
         try! realm.write{
             realm.add(infoUser)
         }
-        print("-----Stop save new info")
         savingAllUsers.accept(true)
         RemoveOldInfo().removeOldUsersInfo()
     }

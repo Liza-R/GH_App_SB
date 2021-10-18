@@ -18,20 +18,18 @@ class AllUsersViewModel{
     var infoSearchDelegate: uploadSearchUsersInfo?
     
     init(){
-        /*if startSearch == true{
+        if startSearch == true{
             searchUsersInfo()
             startSearch = false
-        }else{}*/
+        }
     }
     
     func uploadAllUsersInfo(){
         var logins: [String] = [],
             ava_urls: [String] = []
-        
         AllUsersLoader().loadAllUsersInfo{ all_users in
             self.all_users = all_users
             DispatchQueue.main.async {
-                print("---Start upload new info VM")
                 for i in all_users{
                     for j in i{
                         logins.append(j.login)
@@ -39,7 +37,6 @@ class AllUsersViewModel{
                     }
                 }
                 SaveInfo().savingAllUsersInfo(logins: logins, avatar_urls: ava_urls)
-                print("---Stop upload new info VM")
             }
         }
     }

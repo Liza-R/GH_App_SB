@@ -32,7 +32,7 @@
 		2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087883F26FA1B4C00C09E9A /* RepoStruct.swift */; };
 		2087888026FA210800C09E9A /* RepoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087887F26FA210800C09E9A /* RepoLoader.swift */; };
 		2087888826FA259400C09E9A /* AllUsersObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888726FA259400C09E9A /* AllUsersObj.swift */; };
-		2087888E26FA25D300C09E9A /* SaveInfoToRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */; };
+		2087888E26FA25D300C09E9A /* SaveAllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888D26FA25D300C09E9A /* SaveAllUsers.swift */; };
 		2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */; };
 		2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889126FA260200C09E9A /* ReturnModelsDB.swift */; };
 		2087889726FA321200C09E9A /* AvatarLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889626FA321200C09E9A /* AvatarLoader.swift */; };
@@ -93,7 +93,7 @@
 		2087883F26FA1B4C00C09E9A /* RepoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoStruct.swift; sourceTree = "<group>"; };
 		2087887F26FA210800C09E9A /* RepoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoLoader.swift; sourceTree = "<group>"; };
 		2087888726FA259400C09E9A /* AllUsersObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersObj.swift; sourceTree = "<group>"; };
-		2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfoToRealm.swift; sourceTree = "<group>"; };
+		2087888D26FA25D300C09E9A /* SaveAllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllUsers.swift; sourceTree = "<group>"; };
 		2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldInfo.swift; sourceTree = "<group>"; };
 		2087889126FA260200C09E9A /* ReturnModelsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnModelsDB.swift; sourceTree = "<group>"; };
 		2087889626FA321200C09E9A /* AvatarLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarLoader.swift; sourceTree = "<group>"; };
@@ -285,8 +285,8 @@
 		20A9B178271DA8C9003C4268 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				206AAEB726FF15610003DD5E /* SearchUsersStruct.swift */,
 				2043E16B26F9EC7700FD3667 /* AllUsersStruct.swift */,
+				206AAEB726FF15610003DD5E /* SearchUsersStruct.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 		20A9B17A271DA901003C4268 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				2087888D26FA25D300C09E9A /* SaveInfoToRealm.swift */,
+				2087888D26FA25D300C09E9A /* SaveAllUsers.swift */,
 				2087889126FA260200C09E9A /* ReturnModelsDB.swift */,
 				2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */,
 			);
@@ -574,7 +574,7 @@
 			files = (
 				2043E13626F9EA0B00FD3667 /* AllUsersViewController.swift in Sources */,
 				2087889726FA321200C09E9A /* AvatarLoader.swift in Sources */,
-				2087888E26FA25D300C09E9A /* SaveInfoToRealm.swift in Sources */,
+				2087888E26FA25D300C09E9A /* SaveAllUsers.swift in Sources */,
 				2043E17E26F9ED6D00FD3667 /* AlertsFuncs.swift in Sources */,
 				2043E17226F9ECBD00FD3667 /* AllUsersLoader.swift in Sources */,
 				2043E16C26F9EC7700FD3667 /* AllUsersStruct.swift in Sources */,

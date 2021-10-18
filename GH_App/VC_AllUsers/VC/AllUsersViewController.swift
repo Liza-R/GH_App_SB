@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 
 var savingAllUsers = BehaviorRelay<Bool>(value: false),
+    savingAllSearchUsers = BehaviorRelay<Bool>(value: false),
 
 searchUserName = "",
 chooseLogin = "",
@@ -28,7 +29,6 @@ class ViewController: UIViewController {
         disposeBag = DisposeBag()
     
     let allUsersInfoRealm = ReturnInfoModels().returnAllUsers()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo)
@@ -56,8 +56,6 @@ class ViewController: UIViewController {
             for i in inAllUsers.avatar_urls{
                 self.usersAva.append(i.avatar_url)
             }
-        }else{
-            print("DataBase is empty")
         }
     }
     
@@ -72,15 +70,12 @@ class ViewController: UIViewController {
         }.disposed(by: disposeBag)
         
         userSearchBar.rx.text.asObservable().subscribe{ searchS in
-                if searchS.element == ""{
-                    RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
-                }else{}
+            RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
         }.disposed(by: disposeBag)
         
-        self.allUsersTable.rx.itemSelected
-          .subscribe(onNext: { indexPath in
+        self.allUsersTable.rx.itemSelected.subscribe(onNext: { indexPath in
               RxMotions().openNewVC(vc: self, usersLogins: self.usersLogins, indPath: indexPath)
-          }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -102,7 +97,6 @@ extension ViewController: UISearchBarDelegate{
                     }
                 }
             }
-            self.allUsersTable.reloadData()
         }else{
             startSearch = false
             Alerts().offlineAlert(vc: self)
@@ -120,23 +114,18 @@ extension ViewController: uploadSearchUsersInfo {
 }
 
 extension ViewController: UITableViewDataSource{
-
     func tableView(_ tableView_Alam: UITableView, numberOfRowsInSection section: Int) -> Int {
         var countCells = 0
-        if usersLogins.isEmpty{
-            countCells = 1
-        }else{
+        if !usersLogins.isEmpty{
             countCells = usersLogins.count
         }
         return countCells
     }
 
     func tableView(_ tableView_Alam: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView_Alam.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! AllUsersTableViewCell
-        
         if usersLogins.isEmpty{
-            cell.userNameLabel.text = "User with login \(searchUserName) not found"
+            cell.userNameLabel.text = "Info Not Found"
             cell.userImage.image = .none
         }else{
             cell.userNameLabel.text = usersLogins[indexPath.row]
