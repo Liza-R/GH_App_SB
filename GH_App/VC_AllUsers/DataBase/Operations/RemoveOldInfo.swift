@@ -16,4 +16,12 @@ class RemoveOldInfo{
             }
         }
     }
+    func removeOldAvatars(){
+        let modelCurrent = SaveAvatars().realm.objects(AllUsersAvatarsDB.self)
+        if modelCurrent.first != nil && modelCurrent.count > 2{
+            try! SaveInfo().realm.write {
+                SaveInfo().realm.delete(modelCurrent.first!)
+            }
+        }
+    }
 }

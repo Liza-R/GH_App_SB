@@ -19,7 +19,7 @@ class ConnectionActions{
                 refresh.endRefreshing()
             }
         }else{
-            print("-Internet is notavailable.")
+            print("-Internet is not available.")
             Alerts().offlineAlert(vc: vc)
             if refreshStatus == true{
                 refresh.endRefreshing()

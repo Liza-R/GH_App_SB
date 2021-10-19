@@ -34,6 +34,7 @@ class AllUsersViewModel{
                     }
                 }
                 SaveInfo().savingAllUsersInfo(logins: logins, avatar_urls: ava_urls)
+                SaveAvatarsForTable().uploadAvatarsAndSaveInfo(ava_urls: ava_urls)
             }
         }
     }

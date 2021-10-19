@@ -2,11 +2,10 @@
 //  AvatarLoader.swift
 //  GH_App
 //
-//  Created by Elizaveta Rogozhina on 21/09/2021.
+//  Created by Elizaveta Rogozhina on 19/10/2021.
 //
 
 import Foundation
-import UIKit
 import Alamofire
 
 class AvatarLoader{
@@ -14,11 +13,13 @@ class AvatarLoader{
         AF.request(ava_url ,method: .get).response{ response in
             switch response.result {
                 case .success(let responseData):
-                    cellImage.image = UIImage(data: responseData!, scale:1) ?? .checkmark
+                let ic = UIImage(data: responseData!, scale:1) ?? .checkmark
+                    cellImage.image = ic
+                //SaveAvatars().savingAllUsersAvatars(avatar: ic.pngData()! as NSData)
                 
                  case .failure(let error):
                     print("error---> avatar loading", error, response.response?.statusCode as Any)
-                 }
             }
+        }
     }
 }

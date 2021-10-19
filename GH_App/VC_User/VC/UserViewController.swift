@@ -27,8 +27,7 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewModel = UserViewModel()
-        viewModel.infoUserDelegate = self
+        UserViewModel().infoUserDelegate = self
         self.allReposTable.rowHeight = 160
         self.allReposTable.reloadData()
         self.allReposTable.dataSource = self
@@ -47,7 +46,7 @@ extension UserViewController: uploadUserInfo {
     }
     
     func uploadUInfo(login: String, avatar_url: String, repos_url: String, name: String, company: String, location: String, public_repos_c: Int, email: String){
-        //AvatarLoader().uploadAvatarsAndSaveInfo(ava_urls: <#T##[String]#>, user_logins: <#T##[String]#>)
+        AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: avatar_url, cellImage: self.userIcon)
         self.userNameLabel.text = login
         self.nameLabel.text = "Name: \(name)"
         self.companyLabel.text = "Company: \(company)"

@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 class AllSearchUsersLoader{
+    
     func loadAllSearchUsersInfo(completion: @escaping ([AllSearchUsers.All_Search_Info]) -> Void){
         AF.request(URL(string: URLs().searchUserURL)!, method: .get)
         .validate()
