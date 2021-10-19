@@ -10,16 +10,15 @@ import RxCocoa
 import RxSwift
 
 var savingAllUsers = BehaviorRelay<Bool>(value: false),
-
-searchUserName = "",
-chooseLogin = "",
-errorLoad = BehaviorRelay<Int>(value: 0)
+    errorLoad = BehaviorRelay<Int>(value: 0),
+    searchUserName = "",
+    chooseLogin = ""
 
 class ViewController: UIViewController {
     @IBOutlet weak var userSearchBar: UISearchBar!
     @IBOutlet weak var allUsersTable: UITableView!
     
-    var usersLogins: [String] = [],
+    private var usersLogins: [String] = [],
         usersAva: [String] = [],
         searchUsersLogins: [String] = [],
         searchUsersAva: [String] = [],
@@ -27,7 +26,8 @@ class ViewController: UIViewController {
         refreshControl = UIRefreshControl(),
         disposeBag = DisposeBag()
     
-    let allUsersInfoRealm = ReturnInfoModels().returnAllUsers()
+    private let allUsersInfoRealm = ReturnInfoModels().returnAllUsers()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo)
@@ -69,9 +69,7 @@ class ViewController: UIViewController {
         }.disposed(by: disposeBag)
 
         errorLoad.asObservable().subscribe{ error in
-            if error.element == 403{
-                Alerts().error403Alert(vc: self)
-            }
+            Alerts().error_Alert(vc: self, error: error.element ?? 0)
         }.disposed(by: disposeBag)
         
         self.allUsersTable.rx.itemSelected.subscribe(onNext: { indexPath in
@@ -82,7 +80,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if Connectivity.isConnectedToInternet {
+        if Connectivity.isConnectedToInternet{
             searchUserName = searchText
             AllUsersViewModel().infoSearchDelegate = self
             RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)

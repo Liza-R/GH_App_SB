@@ -16,12 +16,25 @@ class Alerts{
          alert.pruneNegativeWidthConstraints()
          vc.present(alert, animated: true, completion: nil)
     }
-    func error403Alert(vc: UIViewController){
-        let alert = UIAlertController(title: "Error", message: "403", preferredStyle: UIAlertController.Style.actionSheet),
-        cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
-         alert.addAction(cancelAction)
-         alert.pruneNegativeWidthConstraints()
-         vc.present(alert, animated: true, completion: nil)
+    func error_Alert(vc: UIViewController, error: Int){
+        var message = ""
+        switch error {
+        case 403:
+            message = "Restriction or lack of access"
+            let alert = UIAlertController(title: "Error \(error)", message: message, preferredStyle: UIAlertController.Style.actionSheet),
+            cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
+            alert.addAction(cancelAction)
+            alert.pruneNegativeWidthConstraints()
+            vc.present(alert, animated: true, completion: nil)
+        case 422:
+            print("Lack of username when searching, error: \(error)")
+        case 200:
+            print("OK, \(error)")
+        case 0:
+            print("No errors")
+        default:
+            print("Unknown error: \(error)")
+        }
     }
 }
 extension UIAlertController {
