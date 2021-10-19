@@ -89,7 +89,6 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         if Connectivity.isConnectedToInternet{
             searchUserName = searchText
             AllUsersViewModel().infoSearchDelegate = self

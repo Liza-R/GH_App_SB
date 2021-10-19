@@ -7,9 +7,6 @@
 
 import Foundation
 import RealmSwift
-import RxRealm
-import RxCocoa
-import RxSwift
 
 class ReturnInfoModels{
     func returnAllUsers() -> Results<AllUsersInfoDB>{

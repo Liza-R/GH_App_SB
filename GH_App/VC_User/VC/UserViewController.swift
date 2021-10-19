@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+
+var savingUserInfo = BehaviorRelay<Bool>(value: false)
 
 class UserViewController: UIViewController {
     @IBOutlet weak var userIcon: UIImageView!
@@ -17,22 +21,67 @@ class UserViewController: UIViewController {
     @IBOutlet weak var PubReposCountLabel: UILabel!
     @IBOutlet weak var allReposTable: UITableView!
     
-    var repo_names: [String] = [],
+    private var repo_names: [String] = [],
         repo_privates: [Bool] = [],
         description_repo: [String] = [],
         create_dates: [String] = [],
         update_dates: [String] = [],
         push_dates: [String] = [],
-        lang_repo: [String] = []
+        lang_repo: [String] = [],
+        disposeBag = DisposeBag()
+    
+    private let userInfoDB = ReturnUserInfoModels().returnAllUserInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UserViewModel().infoUserDelegate = self
+        UserViewModel().uploadUserInfo()
         self.allReposTable.rowHeight = 160
         self.allReposTable.reloadData()
         self.allReposTable.dataSource = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        savingUserInfo.asObservable().subscribe{ status in
+            if status.element == true{
+                self.returnLastDBInfo()
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    func returnLastDBInfo(){
+        if !userInfoDB.isEmpty{
+            if Connectivity.isConnectedToInternet{
+                let lastInfo = userInfoDB.last!
+                for i in lastInfo.logins{
+                   self.userNameLabel.text = i.login
+                }
+                for i in lastInfo.names{
+                    self.nameLabel.text = "Name: \(i.name)"
+                }
+                for i in lastInfo.avaURLs{
+                    AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: i.avaURL, cellImage: self.userIcon)
+                }
+                for i in lastInfo.emails{
+                    self.emailLabel.text = "Email: \(i.email)"
+                }
+                for i in lastInfo.locations{
+                    self.locationLabel.text = "Location: \(i.location)"
+                }
+                for i in lastInfo.company{
+                    self.companyLabel.text = "Company: \(i.company)"
+                }
+                for i in lastInfo.numsRepos{
+                    self.PubReposCountLabel.text = "Public repos: \(i.numRepos)"
+                }
+            }else{
+                Alerts().offlineAlert(vc: self)
+            }
+        }
+    }
 }
+
 extension UserViewController: uploadUserInfo {
     func uploadRepos(repo_names: [String], repo_privates: [Bool], description: [String], create_dates: [String], update_dates: [String], push_dates: [String], lang_repo: [String]) {
         self.repo_names = repo_names
@@ -44,16 +93,6 @@ extension UserViewController: uploadUserInfo {
         self.lang_repo = lang_repo
         self.allReposTable.reloadData()
     }
-    
-    func uploadUInfo(login: String, avatar_url: String, repos_url: String, name: String, company: String, location: String, public_repos_c: Int, email: String){
-        AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: avatar_url, cellImage: self.userIcon)
-        self.userNameLabel.text = login
-        self.nameLabel.text = "Name: \(name)"
-        self.companyLabel.text = "Company: \(company)"
-        self.locationLabel.text = "Location: \(location)"
-        self.PubReposCountLabel.text = "Public repos: \(public_repos_c)"
-        self.emailLabel.text = "Email: \(email)"
-    }
 }
 
 extension UserViewController: UITableViewDataSource{
@@ -63,7 +102,6 @@ extension UserViewController: UITableViewDataSource{
     }
 
     func tableView(_ tableView_Alam: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView_Alam.dequeueReusableCell(withIdentifier: "repoCell", for: indexPath) as! UserReposTableViewCell
         cell.repoCreateLabel.text = "Create: \(Formatter().formatteDate(date: create_dates[indexPath.row]))"
         cell.repoDescriptLabel.text = self.description_repo[indexPath.row]
