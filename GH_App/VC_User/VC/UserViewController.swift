@@ -30,11 +30,11 @@ class UserViewController: UIViewController {
         lang_repo: [String] = [],
         disposeBag = DisposeBag()
     
-    private let userInfoDB = ReturnUserInfoModels().returnAllUserInfo()
+    private let allSavedViewedUsersInfoDB = ReturnUserInfoModels().returnAllUserInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserViewModel().infoUserDelegate = self
+        self.returnLastDBInfo()
         UserViewModel().uploadUserInfo()
         self.allReposTable.rowHeight = 160
         self.allReposTable.reloadData()
@@ -43,41 +43,36 @@ class UserViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        savingUserInfo.asObservable().subscribe{ status in
-            if status.element == true{
-                self.returnLastDBInfo()
-            }
-        }.disposed(by: disposeBag)
+        if Connectivity.isConnectedToInternet{
+            UserViewModel().infoUserDelegate = self
+            savingUserInfo.asObservable().subscribe{ status in
+                if status.element == true{
+                    self.returnLastDBInfo()
+                }
+            }.disposed(by: disposeBag)
+        }else{
+            Alerts().offlineAlert(vc: self)
+        }
     }
     
     func returnLastDBInfo(){
-        if !userInfoDB.isEmpty{
-            if Connectivity.isConnectedToInternet{
-                let lastInfo = userInfoDB.last!
-                for i in lastInfo.logins{
-                   self.userNameLabel.text = i.login
+        if !allSavedViewedUsersInfoDB.isEmpty{
+            print("DB is not empty")
+            for i in allSavedViewedUsersInfoDB{
+                for t in i.user{
+                    if t.login == chooseLogin{
+                        self.nameLabel.text = "Name: \(t.name)"
+                        self.userNameLabel.text = t.login
+                        AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: t.avaURL, cellImage: self.userIcon)
+                        self.emailLabel.text = "Email: \(t.email)"
+                        self.locationLabel.text = "Location: \(t.location)"
+                        self.companyLabel.text = "Company: \(t.company)"
+                        self.PubReposCountLabel.text = "Public repos: \(t.numRepos)"
+                    }
                 }
-                for i in lastInfo.names{
-                    self.nameLabel.text = "Name: \(i.name)"
-                }
-                for i in lastInfo.avaURLs{
-                    AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: i.avaURL, cellImage: self.userIcon)
-                }
-                for i in lastInfo.emails{
-                    self.emailLabel.text = "Email: \(i.email)"
-                }
-                for i in lastInfo.locations{
-                    self.locationLabel.text = "Location: \(i.location)"
-                }
-                for i in lastInfo.company{
-                    self.companyLabel.text = "Company: \(i.company)"
-                }
-                for i in lastInfo.numsRepos{
-                    self.PubReposCountLabel.text = "Public repos: \(i.numRepos)"
-                }
-            }else{
-                Alerts().offlineAlert(vc: self)
             }
+        }else{
+            print("DB is empty")
         }
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class ReturnUserInfoModels{
-    func returnAllUserInfo() -> Results<ViewedUsersDB>{
-        return SaveUserInfo().realm.objects(ViewedUsersDB.self)
+    func returnAllUserInfo() -> Results<ViewedUserDB>{
+        return SaveUserInfo().realmUser.objects(ViewedUserDB.self)
     }
 }

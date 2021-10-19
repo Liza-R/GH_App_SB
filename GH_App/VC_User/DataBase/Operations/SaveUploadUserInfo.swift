@@ -9,40 +9,27 @@ import Foundation
 import RealmSwift
 
 class SaveUserInfo{
-    let realm = try! Realm()
+    let realmUser = try! Realm()
     
     func savingViewedUsersInfo(login: String, name: String, company: String, location: String, email: String, numRepos: Int, repoURL: String, avaURL: String){
-        let infoUser = ViewedUsersDB(),
-            login_ = LoginUserClass(),
-            name_ = NameUserClass(),
-            company_ = CompanyUserClass(),
-            email_ = EmailUserClass(),
-            location_ = LocationUserClass(),
-            numRepo_ = NumPubReposUserClass(),
-            repoURL_ = ReposURLUserClass(),
-            avaURL_ = AvatarURLUserClass()
+        let infoViewUser = ViewedUserDB(),
+            user_ = UserClass()
+            
+        user_.login = login
+        user_.numRepos = numRepos
+        user_.company = company
+        user_.avaURL = avaURL
+        user_.email = email
+        user_.reposURL = repoURL
+        user_.location = location
+        user_.name = name
         
-        login_.login = login
-        name_.name = name
-        company_.company = company
-        location_.location = location
-        numRepo_.numRepos = numRepos
-        email_.email = email
-        repoURL_.reposURL = repoURL
-        
-        infoUser.logins.append(login_)
-        infoUser.names.append(name_)
-        infoUser.company.append(company_)
-        infoUser.locations.append(location_)
-        infoUser.numsRepos.append(numRepo_)
-        infoUser.emails.append(email_)
-        infoUser.reposURLS.append(repoURL_)
-        
-        avaURL_.avaURL = avaURL
-        infoUser.avaURLs.append(avaURL_)
-        
-        try! realm.write{
-            realm.add(infoUser)
+        infoViewUser.user.append(user_)
+
+        try! realmUser.write{
+            realmUser.add(infoViewUser)
+            //allViewedUsers.users.append(infoViewUser)
+            //realmUser.add(allViewedUsers)
         }
         savingUserInfo.accept(true)
     }
