@@ -35,7 +35,9 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.returnLastDBInfo()
-        UserViewModel().uploadUserInfo()
+        let userVM =  UserViewModel()
+        userVM.uploadUserInfo()
+        userVM.uploadReposInfo()
         self.allReposTable.rowHeight = 160
         self.allReposTable.reloadData()
         self.allReposTable.dataSource = self
@@ -44,7 +46,6 @@ class UserViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if Connectivity.isConnectedToInternet{
-            UserViewModel().infoUserDelegate = self
             savingUserInfo.asObservable().subscribe{ status in
                 if status.element == true{
                     self.returnLastDBInfo()
@@ -59,34 +60,34 @@ class UserViewController: UIViewController {
         if !allSavedViewedUsersInfoDB.isEmpty{
             print("DB is not empty")
             for i in allSavedViewedUsersInfoDB{
-                for t in i.user{
-                    if t.login == chooseLogin{
-                        self.nameLabel.text = "Name: \(t.name)"
-                        self.userNameLabel.text = t.login
-                        AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: t.avaURL, cellImage: self.userIcon)
-                        self.emailLabel.text = "Email: \(t.email)"
-                        self.locationLabel.text = "Location: \(t.location)"
-                        self.companyLabel.text = "Company: \(t.company)"
-                        self.PubReposCountLabel.text = "Public repos: \(t.numRepos)"
+                print(i)
+                for j in i.users{
+                    for t in j.user{
+                        if t.login == chooseLogin{
+                            self.nameLabel.text = "Name: \(t.name)"
+                            self.userNameLabel.text = t.login
+                            AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: t.avaURL, cellImage: self.userIcon)
+                            self.emailLabel.text = "Email: \(t.email)"
+                            self.locationLabel.text = "Location: \(t.location)"
+                            self.companyLabel.text = "Company: \(t.company)"
+                            self.PubReposCountLabel.text = "Public repos: \(t.numRepos)"
+                            for h in j.repos_user{
+                                self.repo_names.append(h.repo_name)
+                                self.repo_privates.append(h.repo_private)
+                                self.description_repo.append(h.description_repo)
+                                self.create_dates.append(h.create_date)
+                                self.update_dates.append(h.update_date)
+                                self.push_dates.append(h.push_date)
+                                self.lang_repo.append(h.lang_repo)
+                            }
+                            self.allReposTable.reloadData()
+                        }
                     }
                 }
             }
         }else{
             print("DB is empty")
         }
-    }
-}
-
-extension UserViewController: uploadUserInfo {
-    func uploadRepos(repo_names: [String], repo_privates: [Bool], description: [String], create_dates: [String], update_dates: [String], push_dates: [String], lang_repo: [String]) {
-        self.repo_names = repo_names
-        self.repo_privates = repo_privates
-        self.description_repo = description
-        self.create_dates = create_dates
-        self.update_dates = update_dates
-        self.push_dates = push_dates
-        self.lang_repo = lang_repo
-        self.allReposTable.reloadData()
     }
 }
 

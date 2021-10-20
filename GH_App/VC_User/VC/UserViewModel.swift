@@ -7,24 +7,16 @@
 
 import Foundation
 
-protocol uploadUserInfo{
-    func uploadRepos(repo_names: [String], repo_privates: [Bool], description: [String], create_dates: [String], update_dates: [String], push_dates: [String], lang_repo: [String])
-}
-
 class UserViewModel{
     private var user: UserInfo.Info_User?,
-                user_repos: [[RepoInfo.Repo_Info]] = [[]]
-    var infoUserDelegate: uploadUserInfo?
-    
-    init(){
-        uploadReposInfo()
-    }
-    
+                user_repos: [[RepoInfo.Repo_Info]] = [[]],
+    saveUI = SaveUserInfo()
+
     func uploadUserInfo(){
         UserLoader().loadUserInfo{ user in
             self.user = user
             DispatchQueue.main.async{
-                SaveUserInfo().savingViewedUsersInfo(login: user.login, name: user.name ?? "Name Not Found", company: user.company ?? "Company Not Found", location: user.location ?? "Location Not Found", email: user.email ?? "Email Not Found", numRepos: user.public_repos, repoURL: user.repos_url, avaURL: user.avatar_url)
+                self.saveUI.savingViewedUsersInfo(login: user.login, name: user.name ?? "Name Not Found", company: user.company ?? "Company Not Found", location: user.location ?? "Location Not Found", email: user.email ?? "Email Not Found", numRepos: user.public_repos, repoURL: user.repos_url, avaURL: user.avatar_url)
             }
         }
     }
@@ -51,7 +43,7 @@ class UserViewModel{
                         lang_repo.append(i.language ?? "Languge Not Found")
                     }
                 }
-                self.infoUserDelegate?.uploadRepos(repo_names: repo_names, repo_privates: repo_privates, description: description_repo, create_dates: create_dates, update_dates: update_dates, push_dates: push_dates, lang_repo: lang_repo)
+                self.saveUI.savingViewedUsersRepoInfo(repo_names: repo_names, repo_privates: repo_privates, description_repo: description_repo, create_dates: create_dates, update_dates: update_dates, push_dates: push_dates, lang_repo: lang_repo)
             }
         }
     }

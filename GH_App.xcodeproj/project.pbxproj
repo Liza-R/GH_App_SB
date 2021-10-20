@@ -30,7 +30,6 @@
 		206AAEBA26FF15F60003DD5E /* SearchResultsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */; };
 		206AAEC0270706CE0003DD5E /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AAEBF270706CE0003DD5E /* Formatter.swift */; };
 		2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087883F26FA1B4C00C09E9A /* RepoStruct.swift */; };
-		2087888026FA210800C09E9A /* RepoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087887F26FA210800C09E9A /* RepoLoader.swift */; };
 		2087888826FA259400C09E9A /* AllUsersObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888726FA259400C09E9A /* AllUsersObj.swift */; };
 		2087888E26FA25D300C09E9A /* SaveAllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888D26FA25D300C09E9A /* SaveAllUsers.swift */; };
 		2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */; };
@@ -46,9 +45,9 @@
 		20A9B18F271EB64F003C4268 /* AvatarLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B18E271EB64F003C4268 /* AvatarLoader.swift */; };
 		20A9B191271EB8FB003C4268 /* SaveAvatarsTableLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B190271EB8FB003C4268 /* SaveAvatarsTableLoader.swift */; };
 		20A9B193271EE278003C4268 /* UserObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B192271EE278003C4268 /* UserObj.swift */; };
-		20A9B195271EE288003C4268 /* RepoTableObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B194271EE288003C4268 /* RepoTableObj.swift */; };
 		20A9B197271EE295003C4268 /* SaveUploadUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B196271EE295003C4268 /* SaveUploadUserInfo.swift */; };
 		20A9B199271EE2A1003C4268 /* ReturnUserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B198271EE2A1003C4268 /* ReturnUserModels.swift */; };
+		20A9B19D27200D51003C4268 /* ReposLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B19C27200D51003C4268 /* ReposLoader.swift */; };
 		95B915FF4CB556B6365FBB54 /* Pods_GH_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +98,6 @@
 		206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsLoader.swift; sourceTree = "<group>"; };
 		206AAEBF270706CE0003DD5E /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		2087883F26FA1B4C00C09E9A /* RepoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoStruct.swift; sourceTree = "<group>"; };
-		2087887F26FA210800C09E9A /* RepoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoLoader.swift; sourceTree = "<group>"; };
 		2087888726FA259400C09E9A /* AllUsersObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersObj.swift; sourceTree = "<group>"; };
 		2087888D26FA25D300C09E9A /* SaveAllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllUsers.swift; sourceTree = "<group>"; };
 		2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldInfo.swift; sourceTree = "<group>"; };
@@ -115,9 +113,9 @@
 		20A9B18E271EB64F003C4268 /* AvatarLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarLoader.swift; sourceTree = "<group>"; };
 		20A9B190271EB8FB003C4268 /* SaveAvatarsTableLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAvatarsTableLoader.swift; sourceTree = "<group>"; };
 		20A9B192271EE278003C4268 /* UserObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObj.swift; sourceTree = "<group>"; };
-		20A9B194271EE288003C4268 /* RepoTableObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableObj.swift; sourceTree = "<group>"; };
 		20A9B196271EE295003C4268 /* SaveUploadUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUploadUserInfo.swift; sourceTree = "<group>"; };
 		20A9B198271EE2A1003C4268 /* ReturnUserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnUserModels.swift; sourceTree = "<group>"; };
+		20A9B19C27200D51003C4268 /* ReposLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposLoader.swift; sourceTree = "<group>"; };
 		753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.debug.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F551BA2F9CBDBB27C5EF23A4 /* Pods-GH_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.release.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -341,8 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				2043E17326F9ECC800FD3667 /* UserLoader.swift */,
-				2087887F26FA210800C09E9A /* RepoLoader.swift */,
 				20A9B18E271EB64F003C4268 /* AvatarLoader.swift */,
+				20A9B19C27200D51003C4268 /* ReposLoader.swift */,
 			);
 			path = Loaders;
 			sourceTree = "<group>";
@@ -399,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				20A9B192271EE278003C4268 /* UserObj.swift */,
-				20A9B194271EE288003C4268 /* RepoTableObj.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -611,7 +608,6 @@
 				2043E17B26F9ED4100FD3667 /* AllUsersTableViewCell.swift in Sources */,
 				2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */,
 				2043E17726F9ED0900FD3667 /* UserViewModel.swift in Sources */,
-				2087888026FA210800C09E9A /* RepoLoader.swift in Sources */,
 				20A9B168271C1B8E003C4268 /* RxMotions.swift in Sources */,
 				206AAEB826FF15610003DD5E /* SearchUsersStruct.swift in Sources */,
 				2043E16926F9EC2400FD3667 /* URLs.swift in Sources */,
@@ -629,7 +625,7 @@
 				20A9B166271C19B6003C4268 /* CheckDataBase.swift in Sources */,
 				2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */,
 				20A9B193271EE278003C4268 /* UserObj.swift in Sources */,
-				20A9B195271EE288003C4268 /* RepoTableObj.swift in Sources */,
+				20A9B19D27200D51003C4268 /* ReposLoader.swift in Sources */,
 				20A9B173271C5577003C4268 /* ExtensionForURLs.swift in Sources */,
 				20A9B18B271EB45D003C4268 /* AllIconsObj.swift in Sources */,
 				20A9B171271C2A27003C4268 /* ConnectionActions.swift in Sources */,
