@@ -48,6 +48,7 @@
 		20A9B197271EE295003C4268 /* SaveUploadUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B196271EE295003C4268 /* SaveUploadUserInfo.swift */; };
 		20A9B199271EE2A1003C4268 /* ReturnUserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B198271EE2A1003C4268 /* ReturnUserModels.swift */; };
 		20A9B19D27200D51003C4268 /* ReposLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B19C27200D51003C4268 /* ReposLoader.swift */; };
+		20A9B19F27203A0D003C4268 /* RemoveOldUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B19E27203A0D003C4268 /* RemoveOldUserInfo.swift */; };
 		95B915FF4CB556B6365FBB54 /* Pods_GH_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		20A9B196271EE295003C4268 /* SaveUploadUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUploadUserInfo.swift; sourceTree = "<group>"; };
 		20A9B198271EE2A1003C4268 /* ReturnUserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnUserModels.swift; sourceTree = "<group>"; };
 		20A9B19C27200D51003C4268 /* ReposLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposLoader.swift; sourceTree = "<group>"; };
+		20A9B19E27203A0D003C4268 /* RemoveOldUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldUserInfo.swift; sourceTree = "<group>"; };
 		753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.debug.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F551BA2F9CBDBB27C5EF23A4 /* Pods-GH_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.release.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			children = (
 				20A9B196271EE295003C4268 /* SaveUploadUserInfo.swift */,
 				20A9B198271EE2A1003C4268 /* ReturnUserModels.swift */,
+				20A9B19E27203A0D003C4268 /* RemoveOldUserInfo.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				2043E16926F9EC2400FD3667 /* URLs.swift in Sources */,
 				2087888826FA259400C09E9A /* AllUsersObj.swift in Sources */,
 				206AAEBA26FF15F60003DD5E /* SearchResultsLoader.swift in Sources */,
+				20A9B19F27203A0D003C4268 /* RemoveOldUserInfo.swift in Sources */,
 				2043E13226F9EA0B00FD3667 /* AppDelegate.swift in Sources */,
 				20A9B16F271C29CF003C4268 /* CheckConnect.swift in Sources */,
 				2043E16E26F9EC8200FD3667 /* UserStruct.swift in Sources */,
