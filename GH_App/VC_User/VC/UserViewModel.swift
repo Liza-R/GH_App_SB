@@ -10,7 +10,7 @@ import Foundation
 class UserViewModel{
     private var user: UserInfo.Info_User?,
                 user_repos: [[RepoInfo.Repo_Info]] = [[]],
-    saveUI = SaveUserInfo()
+                saveUI = SaveUserInfo()
 
     func uploadUserInfo(){
         UserLoader().loadUserInfo{ user in

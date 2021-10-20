@@ -60,9 +60,8 @@ class UserViewController: UIViewController {
         if !allSavedViewedUsersInfoDB.isEmpty{
             print("DB is not empty")
             for i in allSavedViewedUsersInfoDB{
-                print(i)
-                for j in i.users{
-                    for t in j.user{
+                //for j in i.users{
+                    for t in i.user{
                         if t.login == chooseLogin{
                             self.nameLabel.text = "Name: \(t.name)"
                             self.userNameLabel.text = t.login
@@ -71,7 +70,7 @@ class UserViewController: UIViewController {
                             self.locationLabel.text = "Location: \(t.location)"
                             self.companyLabel.text = "Company: \(t.company)"
                             self.PubReposCountLabel.text = "Public repos: \(t.numRepos)"
-                            for h in j.repos_user{
+                            for h in i.repos_user{
                                 self.repo_names.append(h.repo_name)
                                 self.repo_privates.append(h.repo_private)
                                 self.description_repo.append(h.description_repo)
@@ -82,7 +81,7 @@ class UserViewController: UIViewController {
                             }
                             self.allReposTable.reloadData()
                         }
-                    }
+                    //}
                 }
             }
         }else{

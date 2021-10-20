@@ -10,8 +10,8 @@ import RealmSwift
 
 class SaveUserInfo{
     let realmUser = try! Realm(),
-        infoViewUser = ViewedUserDB(),
-        allUsers = AllViewedUsersDB()
+        infoViewUser = ViewedUserDB()/*,
+        allUsers = AllViewedUsersDB()*/
     
     func savingViewedUsersInfo(login: String, name: String, company: String, location: String, email: String, numRepos: Int, repoURL: String, avaURL: String){
         let user_ = UserClass()
@@ -38,9 +38,9 @@ class SaveUserInfo{
             userRepo_.repo_private = repo_privates[i]
             infoViewUser.repos_user.append(userRepo_)
         }
-        allUsers.users.append(infoViewUser)
+        //allUsers.users.append(infoViewUser)
         try! realmUser.write{
-            realmUser.add(allUsers)
+            realmUser.add(infoViewUser)//allUsers)
         }
         savingUserInfo.accept(true)
     }
