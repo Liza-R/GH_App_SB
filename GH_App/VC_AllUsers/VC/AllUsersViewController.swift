@@ -19,13 +19,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var allUsersTable: UITableView!
     
     private var usersLogins: [String] = [],
-        usersAvaURLs: [String] = [],
-        usersAva: [NSData] = [],
+        usersSearchAvaURLs: [String] = [],
+        usersAvas: [NSData] = [],
         refreshControl = UIRefreshControl(),
+        startSearch = false,
         disposeBag = DisposeBag()
     
-    private let allUsersInfoRealm = ReturnInfoModels().returnAllUsers(),
-                allUsersAvatarsRealm = ReturnInfoModels().returnAllAvatars()
+    private let allUsersInfoRealm = ReturnInfoModels().returnAllUsers()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         self.allUsersTable.addSubview(refreshControl)
         self.userSearchBar.delegate = self
         self.allUsersTable.rowHeight = 120
-        self.allUsersTable.reloadData()
+        //self.allUsersTable.reloadData()
         self.allUsersTable.dataSource = self
     }
 
@@ -47,19 +47,12 @@ class ViewController: UIViewController {
         if !self.allUsersInfoRealm.isEmpty{
             let inAllUsers = self.allUsersInfoRealm.last!
             self.usersLogins.removeAll()
-            self.usersAvaURLs.removeAll()
             for i in inAllUsers.users{
                 self.usersLogins.append(i.login)
-                self.usersAvaURLs.append(i.avatar_url)
+                self.usersAvas.append(i.avatar)
             }
         }
-        if !self.allUsersAvatarsRealm.isEmpty{
-            let inAllAvatars = self.allUsersAvatarsRealm.last!
-            self.usersAva.removeAll()
-            for i in inAllAvatars.avatars{
-                self.usersAva.append(i.avatar)
-            }
-        }
+        self.allUsersTable.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -87,9 +80,12 @@ extension ViewController: UISearchBarDelegate{
         if Connectivity.isConnectedToInternet{
             searchUserName = searchText
             AllUsersViewModel().infoSearchDelegate = self
-            RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
         }else{
             Alerts().offlineAlert(vc: self)
+        }
+        if searchText == ""{
+            startSearch = false
+            self.uploadNOEmptyUsersInfo()
         }
     }
 }
@@ -97,7 +93,8 @@ extension ViewController: UISearchBarDelegate{
 extension ViewController: uploadSearchUsersInfo{
     func uploadSearching(logins: [String], avatar_urls: [String]) {
         self.usersLogins = logins
-        self.usersAvaURLs = avatar_urls
+        self.usersSearchAvaURLs = avatar_urls
+        startSearch = true
         self.allUsersTable.reloadData()
     }
 }
@@ -120,14 +117,10 @@ extension ViewController: UITableViewDataSource{
             cell.userImage.image = .none
         }else{
             cell.userNameLabel.text = usersLogins[indexPath.row]
-            if Connectivity.isConnectedToInternet{
-                AvatarsLoaderForTable().uploadAvatarsTable(ava_url: usersAvaURLs[indexPath.row], cellImage: cell.userImage)
+            if startSearch == true{
+                AvatarsLoaderForTable().uploadAvatarsTable(ava_url: usersSearchAvaURLs[indexPath.row], cellImage: cell.userImage)
             }else{
-                if !usersAva.isEmpty{
-                cell.userImage.image = UIImage(data: usersAva[indexPath.row] as Data)
-                }else{
-                    cell.userImage.image = .none
-                }
+               cell.userImage.image = UIImage(data: usersAvas[indexPath.row] as Data)
             }
         }
         return cell

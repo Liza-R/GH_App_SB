@@ -40,8 +40,6 @@
 		20A9B16F271C29CF003C4268 /* CheckConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B16E271C29CF003C4268 /* CheckConnect.swift */; };
 		20A9B171271C2A27003C4268 /* ConnectionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B170271C2A27003C4268 /* ConnectionActions.swift */; };
 		20A9B173271C5577003C4268 /* ExtensionForURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B172271C5577003C4268 /* ExtensionForURLs.swift */; };
-		20A9B18B271EB45D003C4268 /* AllIconsObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B18A271EB45D003C4268 /* AllIconsObj.swift */; };
-		20A9B18D271EB49C003C4268 /* SaveAllAvatars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B18C271EB49C003C4268 /* SaveAllAvatars.swift */; };
 		20A9B18F271EB64F003C4268 /* AvatarLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B18E271EB64F003C4268 /* AvatarLoader.swift */; };
 		20A9B191271EB8FB003C4268 /* SaveAvatarsTableLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B190271EB8FB003C4268 /* SaveAvatarsTableLoader.swift */; };
 		20A9B193271EE278003C4268 /* UserObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B192271EE278003C4268 /* UserObj.swift */; };
@@ -109,8 +107,6 @@
 		20A9B16E271C29CF003C4268 /* CheckConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConnect.swift; sourceTree = "<group>"; };
 		20A9B170271C2A27003C4268 /* ConnectionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionActions.swift; sourceTree = "<group>"; };
 		20A9B172271C5577003C4268 /* ExtensionForURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionForURLs.swift; sourceTree = "<group>"; };
-		20A9B18A271EB45D003C4268 /* AllIconsObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllIconsObj.swift; sourceTree = "<group>"; };
-		20A9B18C271EB49C003C4268 /* SaveAllAvatars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllAvatars.swift; sourceTree = "<group>"; };
 		20A9B18E271EB64F003C4268 /* AvatarLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarLoader.swift; sourceTree = "<group>"; };
 		20A9B190271EB8FB003C4268 /* SaveAvatarsTableLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAvatarsTableLoader.swift; sourceTree = "<group>"; };
 		20A9B192271EE278003C4268 /* UserObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObj.swift; sourceTree = "<group>"; };
@@ -303,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				2087888726FA259400C09E9A /* AllUsersObj.swift */,
-				20A9B18A271EB45D003C4268 /* AllIconsObj.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -312,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				2087888D26FA25D300C09E9A /* SaveAllUsers.swift */,
-				20A9B18C271EB49C003C4268 /* SaveAllAvatars.swift */,
 				2087889126FA260200C09E9A /* ReturnModelsDB.swift */,
 				2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */,
 			);
@@ -622,7 +616,6 @@
 				2043E16E26F9EC8200FD3667 /* UserStruct.swift in Sources */,
 				20A9B197271EE295003C4268 /* SaveUploadUserInfo.swift in Sources */,
 				2043E17426F9ECC800FD3667 /* UserLoader.swift in Sources */,
-				20A9B18D271EB49C003C4268 /* SaveAllAvatars.swift in Sources */,
 				2043E16426F9EA5800FD3667 /* AllUsersViewModel.swift in Sources */,
 				2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */,
 				2043E13426F9EA0B00FD3667 /* SceneDelegate.swift in Sources */,
@@ -631,7 +624,6 @@
 				20A9B193271EE278003C4268 /* UserObj.swift in Sources */,
 				20A9B19D27200D51003C4268 /* ReposLoader.swift in Sources */,
 				20A9B173271C5577003C4268 /* ExtensionForURLs.swift in Sources */,
-				20A9B18B271EB45D003C4268 /* AllIconsObj.swift in Sources */,
 				20A9B171271C2A27003C4268 /* ConnectionActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

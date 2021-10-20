@@ -8,8 +8,8 @@
 import Foundation
 import Alamofire
 
-class SaveAvatarsForTable{
-    func uploadAvatarsAndSaveInfo(ava_urls: [String]){
+class LoadAvatarsAndSaveInfoForTable{
+    func uploadAvatarsAndSaveInfo(ava_urls: [String], logins: [String]){
         var all_avatars: [NSData] = []
         for i in ava_urls{
             AF.request(i ,method: .get).response{ response in
@@ -17,9 +17,8 @@ class SaveAvatarsForTable{
                     case .success(let responseData):
                     let ic = UIImage(data: responseData!, scale: 1) ?? .checkmark
                     all_avatars.append(ic.pngData()! as NSData)
-
                     if all_avatars.count == ava_urls.count{
-                        SaveAvatars().savingAllUsersAvatars(avatars: all_avatars, urls: ava_urls)
+                        SaveInfo().savingAllUsersInfo(logins: logins, avatars: all_avatars)
                     }
 
                      case .failure(let error):

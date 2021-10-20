@@ -11,12 +11,12 @@ import RealmSwift
 class SaveInfo{
     let realm = try! Realm()
     
-    func savingAllUsersInfo(logins: [String], avatar_urls: [String]){
+    func savingAllUsersInfo(logins: [String], avatars: [NSData]){
         let infoUser = AllUsersInfoDB()
         for (i, j) in logins.enumerated(){
             let user = AllUsersClass()
             user.login = j
-            user.avatar_url = avatar_urls[i]
+            user.avatar = avatars[i]
             infoUser.users.append(user)
         }
         try! realm.write{

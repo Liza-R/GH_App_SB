@@ -12,7 +12,4 @@ class ReturnInfoModels{
     func returnAllUsers() -> Results<AllUsersInfoDB>{
         return SaveInfo().realm.objects(AllUsersInfoDB.self)
     }
-    func returnAllAvatars() -> Results<AllUsersAvatarsDB>{
-        return SaveAvatars().realm.objects(AllUsersAvatarsDB.self)
-    }
 }

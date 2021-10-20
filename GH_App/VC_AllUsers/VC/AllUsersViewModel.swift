@@ -33,8 +33,7 @@ class AllUsersViewModel{
                         ava_urls.append(j.avatar_url)
                     }
                 }
-                SaveInfo().savingAllUsersInfo(logins: logins, avatar_urls: ava_urls)
-                SaveAvatarsForTable().uploadAvatarsAndSaveInfo(ava_urls: ava_urls)
+                LoadAvatarsAndSaveInfoForTable().uploadAvatarsAndSaveInfo(ava_urls: ava_urls, logins: logins)
             }
         }
     }
