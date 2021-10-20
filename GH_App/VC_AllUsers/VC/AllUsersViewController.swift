@@ -35,7 +35,6 @@ class ViewController: UIViewController {
         self.allUsersTable.addSubview(refreshControl)
         self.userSearchBar.delegate = self
         self.allUsersTable.rowHeight = 120
-        //self.allUsersTable.reloadData()
         self.allUsersTable.dataSource = self
     }
 
@@ -77,14 +76,16 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if Connectivity.isConnectedToInternet{
-            searchUserName = searchText
-            AllUsersViewModel().infoSearchDelegate = self
+        if searchText != ""{
+            if Connectivity.isConnectedToInternet{
+                self.startSearch = true
+                searchUserName = searchText
+                AllUsersViewModel().infoSearchDelegate = self
+            }else{
+                Alerts().offlineAlert(vc: self)
+            }
         }else{
-            Alerts().offlineAlert(vc: self)
-        }
-        if searchText == ""{
-            startSearch = false
+            self.startSearch = false
             self.uploadNOEmptyUsersInfo()
         }
     }
@@ -94,7 +95,6 @@ extension ViewController: uploadSearchUsersInfo{
     func uploadSearching(logins: [String], avatar_urls: [String]) {
         self.usersLogins = logins
         self.usersSearchAvaURLs = avatar_urls
-        startSearch = true
         self.allUsersTable.reloadData()
     }
 }

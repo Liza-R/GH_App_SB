@@ -12,13 +12,13 @@ class SaveUserInfo{
     let realmUser = try! Realm(),
         infoViewUser = ViewedUserDB()
     
-    func savingViewedUsersInfo(login: String, name: String, company: String, location: String, email: String, numRepos: Int, repoURL: String, avaURL: String){
+    func savingViewedUsersInfo(login: String, name: String, company: String, location: String, email: String, numRepos: Int, repoURL: String, ava: NSData){
         RemoveOldUserInfo().removeOldUserInfo()
         let user_ = UserClass()
         user_.login = login
         user_.numRepos = numRepos
         user_.company = company
-        user_.avaURL = avaURL
+        user_.ava = ava
         user_.email = email
         user_.reposURL = repoURL
         user_.location = location
@@ -41,6 +41,7 @@ class SaveUserInfo{
         try! realmUser.write{
             realmUser.add(infoViewUser)
         }
+        print(infoViewUser)
         savingUserInfo.accept(true)
     }
 }

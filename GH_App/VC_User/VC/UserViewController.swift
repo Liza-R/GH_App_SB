@@ -63,7 +63,7 @@ class UserViewController: UIViewController {
                     if t.login == chooseLogin{
                         self.nameLabel.text = "Name: \(t.name)"
                         self.userNameLabel.text = t.login
-                        AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: t.avaURL, cellImage: self.userIcon)
+                        self.userIcon.image = UIImage(data: t.ava as Data)
                         self.emailLabel.text = "Email: \(t.email)"
                         self.locationLabel.text = "Location: \(t.location)"
                         self.companyLabel.text = "Company: \(t.company)"

@@ -19,6 +19,8 @@ class LoadAvatarsAndSaveInfoForTable{
                     all_avatars.append(ic.pngData()! as NSData)
                     if all_avatars.count == ava_urls.count{
                         SaveInfo().savingAllUsersInfo(logins: logins, avatars: all_avatars)
+                    }else{
+                        print(i)
                     }
 
                      case .failure(let error):

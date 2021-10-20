@@ -16,7 +16,7 @@ class UserClass: Object {
     @objc dynamic var numRepos = 0
     @objc dynamic var email = ""
     @objc dynamic var reposURL = ""
-    @objc dynamic var avaURL = ""
+    @objc dynamic var ava = NSData()
 }
 
 class UserRepoTableClass: Object {

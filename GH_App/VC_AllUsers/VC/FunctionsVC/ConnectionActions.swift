@@ -15,7 +15,6 @@ class ConnectionActions{
                 print("-Internet is available.")
             if refreshStatus == true{
                 CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo)
-                allUsersTable.reloadData()
                 refresh.endRefreshing()
             }
         }else{

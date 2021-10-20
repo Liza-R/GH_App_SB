@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UserViewModel{
     private var user: UserInfo.Info_User?,
@@ -16,7 +17,7 @@ class UserViewModel{
         UserLoader().loadUserInfo{ user in
             self.user = user
             DispatchQueue.main.async{
-                self.saveUI.savingViewedUsersInfo(login: user.login, name: user.name ?? "Name Not Found", company: user.company ?? "Company Not Found", location: user.location ?? "Location Not Found", email: user.email ?? "Email Not Found", numRepos: user.public_repos, repoURL: user.repos_url, avaURL: user.avatar_url)
+                AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: user.avatar_url, login: user.login, name: user.name ?? "Name Not Found", company: user.company ?? "Company Not Found", location: user.location ?? "Location Not Found", email: user.email ?? "E-mail Not Found", numRepos: user.public_repos, repoURL: user.repos_url, saveUI: self.saveUI)
             }
         }
     }
