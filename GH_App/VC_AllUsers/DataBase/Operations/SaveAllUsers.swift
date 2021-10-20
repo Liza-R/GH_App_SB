@@ -13,15 +13,11 @@ class SaveInfo{
     
     func savingAllUsersInfo(logins: [String], avatar_urls: [String]){
         let infoUser = AllUsersInfoDB()
-        for i in logins{
-            let login = LoginForAllUsersClass()
-            login.login = i
-            infoUser.logins.append(login)
-        }
-        for i in avatar_urls{
-            let ava = AvatarURLsForAllUsersClass()
-            ava.avatar_url = i
-            infoUser.avatar_urls.append(ava)
+        for (i, j) in logins.enumerated(){
+            let user = AllUsersClass()
+            user.login = j
+            user.avatar_url = avatar_urls[i]
+            infoUser.users.append(user)
         }
         try! realm.write{
             realm.add(infoUser)

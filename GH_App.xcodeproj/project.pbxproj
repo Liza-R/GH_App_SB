@@ -184,7 +184,8 @@
 			children = (
 				2043E13F26F9EA0C00FD3667 /* Info.plist */,
 				2043E13726F9EA0B00FD3667 /* Main.storyboard */,
-				2043E16726F9EC0100FD3667 /* URLs&CheckConnecton */,
+				20A9B174271C5588003C4268 /* URLs */,
+				20A9B1A027206B9C003C4268 /* CommonFuncsForVCs */,
 				2043E16226F9EA3F00FD3667 /* VC_AllUsers */,
 				2043E17526F9ECF000FD3667 /* VC_User */,
 				2043E16126F9EA1A00FD3667 /* Other */,
@@ -231,15 +232,6 @@
 			path = VC_AllUsers;
 			sourceTree = "<group>";
 		};
-		2043E16726F9EC0100FD3667 /* URLs&CheckConnecton */ = {
-			isa = PBXGroup;
-			children = (
-				20A9B174271C5588003C4268 /* URLs */,
-				20A9B16E271C29CF003C4268 /* CheckConnect.swift */,
-			);
-			path = "URLs&CheckConnecton";
-			sourceTree = "<group>";
-		};
 		2043E17526F9ECF000FD3667 /* VC_User */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,7 +245,6 @@
 		20A9B164271C199C003C4268 /* FunctionsVC */ = {
 			isa = PBXGroup;
 			children = (
-				2043E17D26F9ED6D00FD3667 /* AlertsFuncs.swift */,
 				20A9B165271C19B6003C4268 /* CheckDataBase.swift */,
 				20A9B167271C1B8E003C4268 /* RxMotions.swift */,
 				20A9B170271C2A27003C4268 /* ConnectionActions.swift */,
@@ -411,6 +402,15 @@
 				20A9B19E27203A0D003C4268 /* RemoveOldUserInfo.swift */,
 			);
 			path = Operations;
+			sourceTree = "<group>";
+		};
+		20A9B1A027206B9C003C4268 /* CommonFuncsForVCs */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B16E271C29CF003C4268 /* CheckConnect.swift */,
+				2043E17D26F9ED6D00FD3667 /* AlertsFuncs.swift */,
+			);
+			path = CommonFuncsForVCs;
 			sourceTree = "<group>";
 		};
 		70BE9703F52697B8673F9B08 /* Pods */ = {

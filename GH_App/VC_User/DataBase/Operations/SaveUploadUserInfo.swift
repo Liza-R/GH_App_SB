@@ -42,6 +42,5 @@ class SaveUserInfo{
             realmUser.add(infoViewUser)
         }
         savingUserInfo.accept(true)
-       // RemoveOldUserInfo().removeOldUserInfo()
     }
 }

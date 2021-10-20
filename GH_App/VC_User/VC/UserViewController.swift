@@ -30,22 +30,21 @@ class UserViewController: UIViewController {
         lang_repo: [String] = [],
         disposeBag = DisposeBag()
     
-    private let allSavedViewedUsersInfoDB = ReturnUserInfoModels().returnAllUserInfo()
+    private let allSavedViewedUsersInfoDB = ReturnUserInfoModels().returnAllUserInfo(),
+                userVM = UserViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.returnLastDBInfo()
-        let userVM =  UserViewModel()
-        userVM.uploadUserInfo()
-        userVM.uploadReposInfo()
         self.allReposTable.rowHeight = 160
-        self.allReposTable.reloadData()
         self.allReposTable.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if Connectivity.isConnectedToInternet{
+            userVM.uploadUserInfo()
+            userVM.uploadReposInfo()
             savingUserInfo.asObservable().subscribe{ status in
                 if status.element == true{
                     self.returnLastDBInfo()
@@ -60,28 +59,26 @@ class UserViewController: UIViewController {
         if !allSavedViewedUsersInfoDB.isEmpty{
             print("DB is not empty")
             for i in allSavedViewedUsersInfoDB{
-                //for j in i.users{
-                    for t in i.user{
-                        if t.login == chooseLogin{
-                            self.nameLabel.text = "Name: \(t.name)"
-                            self.userNameLabel.text = t.login
-                            AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: t.avaURL, cellImage: self.userIcon)
-                            self.emailLabel.text = "Email: \(t.email)"
-                            self.locationLabel.text = "Location: \(t.location)"
-                            self.companyLabel.text = "Company: \(t.company)"
-                            self.PubReposCountLabel.text = "Public repos: \(t.numRepos)"
-                            for h in i.repos_user{
-                                self.repo_names.append(h.repo_name)
-                                self.repo_privates.append(h.repo_private)
-                                self.description_repo.append(h.description_repo)
-                                self.create_dates.append(h.create_date)
-                                self.update_dates.append(h.update_date)
-                                self.push_dates.append(h.push_date)
-                                self.lang_repo.append(h.lang_repo)
-                            }
-                            self.allReposTable.reloadData()
+                for t in i.user{
+                    if t.login == chooseLogin{
+                        self.nameLabel.text = "Name: \(t.name)"
+                        self.userNameLabel.text = t.login
+                        AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: t.avaURL, cellImage: self.userIcon)
+                        self.emailLabel.text = "Email: \(t.email)"
+                        self.locationLabel.text = "Location: \(t.location)"
+                        self.companyLabel.text = "Company: \(t.company)"
+                        self.PubReposCountLabel.text = "Public repos: \(t.numRepos)"
+                        for h in i.repos_user{
+                            self.repo_names.append(h.repo_name)
+                            self.repo_privates.append(h.repo_private)
+                            self.description_repo.append(h.description_repo)
+                            self.create_dates.append(h.create_date)
+                            self.update_dates.append(h.update_date)
+                            self.push_dates.append(h.push_date)
+                            self.lang_repo.append(h.lang_repo)
                         }
-                    //}
+                        self.allReposTable.reloadData()
+                    }
                 }
             }
         }else{
@@ -91,7 +88,6 @@ class UserViewController: UIViewController {
 }
 
 extension UserViewController: UITableViewDataSource{
-
     func tableView(_ tableView_Alam: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.repo_names.count
     }

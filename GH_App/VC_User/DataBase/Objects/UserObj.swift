@@ -33,7 +33,3 @@ class ViewedUserDB: Object{
     let user = List<UserClass>(),
         repos_user = List<UserRepoTableClass>()
 }
-
-/*class AllViewedUsersDB: Object{
-    let users = List<ViewedUserDB>()
-}*/

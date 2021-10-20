@@ -8,14 +8,11 @@
 import Foundation
 import RealmSwift
 
-class LoginForAllUsersClass: Object {
+class AllUsersClass: Object {
     @objc dynamic var login = ""
-}
-class AvatarURLsForAllUsersClass: Object {
     @objc dynamic var avatar_url = ""
 }
 
 class AllUsersInfoDB: Object{
-    let logins = List<LoginForAllUsersClass>(),
-        avatar_urls = List<AvatarURLsForAllUsersClass>()
+    let users = List<AllUsersClass>()
 }

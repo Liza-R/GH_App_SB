@@ -21,9 +21,6 @@ class ViewController: UIViewController {
     private var usersLogins: [String] = [],
         usersAvaURLs: [String] = [],
         usersAva: [NSData] = [],
-        searchUsersLogins: [String] = [],
-        searchUsersAva: [String] = [],
-        searchResult: [String] = [],
         refreshControl = UIRefreshControl(),
         disposeBag = DisposeBag()
     
@@ -51,10 +48,8 @@ class ViewController: UIViewController {
             let inAllUsers = self.allUsersInfoRealm.last!
             self.usersLogins.removeAll()
             self.usersAvaURLs.removeAll()
-            for i in inAllUsers.logins{
+            for i in inAllUsers.users{
                 self.usersLogins.append(i.login)
-            }
-            for i in inAllUsers.avatar_urls{
                 self.usersAvaURLs.append(i.avatar_url)
             }
         }
@@ -103,7 +98,6 @@ extension ViewController: uploadSearchUsersInfo{
     func uploadSearching(logins: [String], avatar_urls: [String]) {
         self.usersLogins = logins
         self.usersAvaURLs = avatar_urls
-        self.searchResult = self.usersLogins
         self.allUsersTable.reloadData()
     }
 }
