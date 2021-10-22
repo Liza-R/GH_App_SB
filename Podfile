@@ -6,6 +6,7 @@
 target ‘GH_App’ do
     use_frameworks!
     pod 'Alamofire'
+    pod 'AlamofireImage'
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RealmSwift'
