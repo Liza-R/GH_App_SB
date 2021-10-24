@@ -26,6 +26,7 @@
 		2043E17B26F9ED4100FD3667 /* AllUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E17A26F9ED4100FD3667 /* AllUsersTableViewCell.swift */; };
 		2043E17E26F9ED6D00FD3667 /* AlertsFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E17D26F9ED6D00FD3667 /* AlertsFuncs.swift */; };
 		2043E18026F9F7B000FD3667 /* UserReposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */; };
+		20477F642725710E0057CAB2 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20477F632725710E0057CAB2 /* Spinner.swift */; };
 		206AAEB826FF15610003DD5E /* SearchUsersStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AAEB726FF15610003DD5E /* SearchUsersStruct.swift */; };
 		206AAEBA26FF15F60003DD5E /* SearchResultsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */; };
 		206AAEC0270706CE0003DD5E /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AAEBF270706CE0003DD5E /* Formatter.swift */; };
@@ -93,6 +94,7 @@
 		2043E17A26F9ED4100FD3667 /* AllUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersTableViewCell.swift; sourceTree = "<group>"; };
 		2043E17D26F9ED6D00FD3667 /* AlertsFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsFuncs.swift; sourceTree = "<group>"; };
 		2043E17F26F9F7B000FD3667 /* UserReposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReposTableViewCell.swift; sourceTree = "<group>"; };
+		20477F632725710E0057CAB2 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		206AAEB726FF15610003DD5E /* SearchUsersStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersStruct.swift; sourceTree = "<group>"; };
 		206AAEB926FF15F60003DD5E /* SearchResultsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsLoader.swift; sourceTree = "<group>"; };
 		206AAEBF270706CE0003DD5E /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 			children = (
 				20A9B16E271C29CF003C4268 /* CheckConnect.swift */,
 				2043E17D26F9ED6D00FD3667 /* AlertsFuncs.swift */,
+				20477F632725710E0057CAB2 /* Spinner.swift */,
 			);
 			path = CommonFuncsForVCs;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				206AAEB826FF15610003DD5E /* SearchUsersStruct.swift in Sources */,
 				2043E16926F9EC2400FD3667 /* URLs.swift in Sources */,
 				2087888826FA259400C09E9A /* AllUsersObj.swift in Sources */,
+				20477F642725710E0057CAB2 /* Spinner.swift in Sources */,
 				206AAEBA26FF15F60003DD5E /* SearchResultsLoader.swift in Sources */,
 				20A9B19F27203A0D003C4268 /* RemoveOldUserInfo.swift in Sources */,
 				2043E13226F9EA0B00FD3667 /* AppDelegate.swift in Sources */,

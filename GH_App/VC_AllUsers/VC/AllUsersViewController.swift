@@ -23,12 +23,16 @@ class ViewController: UIViewController {
         usersAvas: [NSData] = [],
         refreshControl = UIRefreshControl(),
         startSearch = false,
-        disposeBag = DisposeBag()
+        disposeBag = DisposeBag(),
+        spin: Spinner?
     
     private let allUsersInfoRealm = ReturnInfoModels().returnAllUsers()
+                
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spin = Spinner()
+        spin?.createSpinner(vc: self.view)
         CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo)
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         refreshControl.tintColor = .white
@@ -52,6 +56,7 @@ class ViewController: UIViewController {
             }
         }
         self.allUsersTable.reloadData()
+        spin?.stopSpinner()
     }
     
     override func viewDidAppear(_ animated: Bool) {

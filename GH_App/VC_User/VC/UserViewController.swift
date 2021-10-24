@@ -28,13 +28,16 @@ class UserViewController: UIViewController {
         update_dates: [String] = [],
         push_dates: [String] = [],
         lang_repo: [String] = [],
-        disposeBag = DisposeBag()
+        disposeBag = DisposeBag(),
+        spin: Spinner?
     
     private let allSavedViewedUsersInfoDB = ReturnUserInfoModels().returnAllUserInfo()
             var userVM: UserViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spin = Spinner()
+        spin?.createSpinner(vc: self.view)
         savingUserInfo.accept(false)
         self.returnLastDBInfo()
         self.allReposTable.rowHeight = 160
@@ -82,6 +85,7 @@ class UserViewController: UIViewController {
                             self.lang_repo.append(h.lang_repo)
                         }
                         self.allReposTable.reloadData()
+                        spin?.stopSpinner()
                     }else{
                         print("user \(t.login) not found in the database")
                     }
