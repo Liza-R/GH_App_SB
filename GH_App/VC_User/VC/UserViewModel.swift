@@ -45,8 +45,8 @@ class UserViewModel{
                         repo_privates.append(i.private)
                         description_repo.append(i.description ?? "Description Not Found")
                         create_dates.append(i.created_at)
-                        update_dates.append(i.updated_at)
-                        push_dates.append(i.pushed_at)
+                        update_dates.append(i.updated_at ?? "Date of create Not Found")
+                        push_dates.append(i.pushed_at ?? "Date of puch Not Found")
                         lang_repo.append(i.language ?? "Languge Not Found")
                     }
                 }

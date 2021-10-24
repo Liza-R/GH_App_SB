@@ -19,8 +19,8 @@ class RepoInfo{
             `private`: Bool,
             description: String?,
             created_at: String,
-            updated_at: String,
-            pushed_at: String,
+            updated_at: String?,
+            pushed_at: String?,
             language: String?
     }
 }
