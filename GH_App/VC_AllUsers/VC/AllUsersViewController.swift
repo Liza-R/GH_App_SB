@@ -89,12 +89,14 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let searchVM = AllUsersViewModel()
         if searchText != ""{
             switch ConnectionActions().checkIntenet() {
             case true:
                 self.startSearch = true
                 searchUserName = searchText
-                AllUsersViewModel().infoSearchDelegate = self
+                searchVM.infoSearchDelegate = self
+                searchVM.searchUsersInfo()
             case false:
                 Alerts().offlineAlert(vc: self)
             }

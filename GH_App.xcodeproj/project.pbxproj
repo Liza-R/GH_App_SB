@@ -36,6 +36,7 @@
 		2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */; };
 		2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889126FA260200C09E9A /* ReturnModelsDB.swift */; };
 		2087889726FA321200C09E9A /* AvatarsLoaderForTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889626FA321200C09E9A /* AvatarsLoaderForTable.swift */; };
+		20A722A42725D1190077E402 /* ExtensionForAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A722A32725D1190077E402 /* ExtensionForAlerts.swift */; };
 		20A9B168271C1B8E003C4268 /* RxMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B167271C1B8E003C4268 /* RxMotions.swift */; };
 		20A9B16F271C29CF003C4268 /* CheckConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B16E271C29CF003C4268 /* CheckConnect.swift */; };
 		20A9B171271C2A27003C4268 /* ConnectionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B170271C2A27003C4268 /* ConnectionActions.swift */; };
@@ -103,6 +104,7 @@
 		2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldInfo.swift; sourceTree = "<group>"; };
 		2087889126FA260200C09E9A /* ReturnModelsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnModelsDB.swift; sourceTree = "<group>"; };
 		2087889626FA321200C09E9A /* AvatarsLoaderForTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarsLoaderForTable.swift; sourceTree = "<group>"; };
+		20A722A32725D1190077E402 /* ExtensionForAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionForAlerts.swift; sourceTree = "<group>"; };
 		20A9B167271C1B8E003C4268 /* RxMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMotions.swift; sourceTree = "<group>"; };
 		20A9B16E271C29CF003C4268 /* CheckConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConnect.swift; sourceTree = "<group>"; };
 		20A9B170271C2A27003C4268 /* ConnectionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionActions.swift; sourceTree = "<group>"; };
@@ -236,6 +238,15 @@
 				20A9B183271DAA69003C4268 /* DataBase */,
 			);
 			path = VC_User;
+			sourceTree = "<group>";
+		};
+		20A722A52725D1360077E402 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				20A722A32725D1190077E402 /* ExtensionForAlerts.swift */,
+				2043E17D26F9ED6D00FD3667 /* AlertsFuncs.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		20A9B164271C199C003C4268 /* FunctionsVC */ = {
@@ -400,8 +411,8 @@
 		20A9B1A027206B9C003C4268 /* CommonFuncsForVCs */ = {
 			isa = PBXGroup;
 			children = (
+				20A722A52725D1360077E402 /* Alerts */,
 				20A9B16E271C29CF003C4268 /* CheckConnect.swift */,
-				2043E17D26F9ED6D00FD3667 /* AlertsFuncs.swift */,
 				20477F632725710E0057CAB2 /* Spinner.swift */,
 			);
 			path = CommonFuncsForVCs;
@@ -624,6 +635,7 @@
 				20A9B193271EE278003C4268 /* UserObj.swift in Sources */,
 				20A9B19D27200D51003C4268 /* ReposLoader.swift in Sources */,
 				20A9B173271C5577003C4268 /* ExtensionForURLs.swift in Sources */,
+				20A722A42725D1190077E402 /* ExtensionForAlerts.swift in Sources */,
 				20A9B171271C2A27003C4268 /* ConnectionActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

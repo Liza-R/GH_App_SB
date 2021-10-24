@@ -17,10 +17,6 @@ class AllUsersViewModel{
     
     var infoSearchDelegate: uploadSearchUsersInfo?
     
-    init(){
-        searchUsersInfo()
-    }
-    
     func uploadAllUsersInfo(){
         var logins: [String] = [],
             ava_urls: [String] = []

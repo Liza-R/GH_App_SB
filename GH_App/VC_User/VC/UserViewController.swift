@@ -50,10 +50,7 @@ class UserViewController: UIViewController {
             userVM = UserViewModel()
             savingUserInfo.asObservable().subscribe{ status in
                 if status.element == true{
-                    print("rx func yes")
                     self.returnLastDBInfo()
-                }else{
-                    print("rx func no")
                 }
             }.disposed(by: disposeBag)
         }else{
@@ -86,8 +83,6 @@ class UserViewController: UIViewController {
                         }
                         self.allReposTable.reloadData()
                         spin?.stopSpinner()
-                    }else{
-                        print("user \(t.login) not found in the database")
                     }
                 }
             }

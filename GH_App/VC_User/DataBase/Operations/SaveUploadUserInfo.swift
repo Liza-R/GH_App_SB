@@ -11,8 +11,8 @@ import RxCocoa
 import RxSwift
 
 class SaveUserInfo{
-    let realmUser = try! Realm(),
-        infoViewUser = ViewedUserDB(),
+    let realmUser = try! Realm()
+    private let infoViewUser = ViewedUserDB(),
         disposeBag = DisposeBag()
     private var saveMainUserInfo = BehaviorRelay<Bool>(value: false)
     
@@ -26,9 +26,7 @@ class SaveUserInfo{
         user_.reposURL = repoURL
         user_.location = location
         user_.name = name
-        print("start append user info")
         infoViewUser.user.append(user_)
-        print("stop append user info")
         saveMainUserInfo.accept(true)
     }
     
@@ -47,7 +45,6 @@ class SaveUserInfo{
                     self.infoViewUser.repos_user.append(userRepo_)
                 }
                 RemoveOldUserInfo().removeOldUserInfo()
-                print("append user repos info")
                 try! self.realmUser.write{
                     self.realmUser.add(self.infoViewUser)
                 }

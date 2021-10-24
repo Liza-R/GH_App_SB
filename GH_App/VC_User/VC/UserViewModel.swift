@@ -23,7 +23,6 @@ class UserViewModel{
             DispatchQueue.main.async{
                 AvatarLoader().uploadAvatarsAndSaveInfo(ava_url: user.avatar_url, login: user.login, name: user.name ?? "Name Not Found", company: user.company ?? "Company Not Found", location: user.location ?? "Location Not Found", email: user.email ?? "E-mail Not Found", numRepos: user.public_repos, repoURL: user.repos_url, saveUI: self.saveUI)
             }
-            print("vm user")
         }
         uploadReposInfo()
     }
@@ -52,7 +51,6 @@ class UserViewModel{
                 }
                 self.saveUI.savingViewedUsersRepoInfo(repo_names: repo_names, repo_privates: repo_privates, description_repo: description_repo, create_dates: create_dates, update_dates: update_dates, push_dates: push_dates, lang_repo: lang_repo)
             }
-            print("vm repos")
         }
     }
 }
