@@ -15,7 +15,7 @@ class Formatter{
     }
     func formattePrivate(status: Bool) -> String{
         var newStatus = ""
-        switch status {
+        switch status{
         case true:
             newStatus = "Yes"
         default:

@@ -11,7 +11,8 @@ import RxSwift
 
 var savingUserInfo = BehaviorRelay<Bool>(value: false)
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController{
+    @IBOutlet weak var topTableConstraint: NSLayoutConstraint!
     @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -29,10 +30,11 @@ class UserViewController: UIViewController {
         push_dates: [String] = [],
         lang_repo: [String] = [],
         disposeBag = DisposeBag(),
-        spin: Spinner?
+        spin: Spinner?,
+        defaultOffSet: CGPoint?,
+        userVM: UserViewModel?
     
     private let allSavedViewedUsersInfoDB = ReturnUserInfoModels().returnAllUserInfo()
-            var userVM: UserViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +44,12 @@ class UserViewController: UIViewController {
         self.returnLastDBInfo()
         self.allReposTable.rowHeight = 160
         self.allReposTable.dataSource = self
+        self.allReposTable.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        defaultOffSet = self.allReposTable.contentOffset
         if Connectivity.isConnectedToInternet{
             userVM = UserViewModel()
             savingUserInfo.asObservable().subscribe{ status in
@@ -92,11 +96,27 @@ class UserViewController: UIViewController {
     }
 }
 
+extension UserViewController: UITableViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = self.allReposTable.contentOffset
+        if let startOffset = self.defaultOffSet {
+            if offset.y < startOffset.y {
+                //let deltaY = abs((startOffset.y - offset.y))
+                topTableConstraint.constant = topTableConstraint.constant + 5
+            } else {
+                //let deltaY = abs((startOffset.y - offset.y))
+                topTableConstraint.constant = topTableConstraint.constant - 5
+            }
+            self.view.layoutIfNeeded()
+        }
+    }
+}
+
 extension UserViewController: UITableViewDataSource{
     func tableView(_ tableView_Alam: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.repo_names.count
     }
-
+    
     func tableView(_ tableView_Alam: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView_Alam.dequeueReusableCell(withIdentifier: "repoCell", for: indexPath) as! UserReposTableViewCell
         cell.repoCreateLabel.text = "Create: \(Formatter().formatteDate(date: create_dates[indexPath.row]))"
