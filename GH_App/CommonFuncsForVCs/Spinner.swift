@@ -10,13 +10,12 @@ import UIKit
 
 class Spinner{
     private let spinner = UIActivityIndicatorView()
-    
     func createSpinner(vc: UIView){
         spinner.style = .large
         spinner.color = .white
         spinner.translatesAutoresizingMaskIntoConstraints = false
-        spinner.startAnimating()
         vc.addSubview(spinner)
+        spinner.startAnimating()
         spinner.centerXAnchor.constraint(equalTo: vc.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: vc.centerYAnchor).isActive = true
     }

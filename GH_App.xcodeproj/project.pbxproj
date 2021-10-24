@@ -36,7 +36,6 @@
 		2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */; };
 		2087889226FA260200C09E9A /* ReturnModelsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889126FA260200C09E9A /* ReturnModelsDB.swift */; };
 		2087889726FA321200C09E9A /* AvatarsLoaderForTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889626FA321200C09E9A /* AvatarsLoaderForTable.swift */; };
-		20A9B166271C19B6003C4268 /* CheckDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B165271C19B6003C4268 /* CheckDataBase.swift */; };
 		20A9B168271C1B8E003C4268 /* RxMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B167271C1B8E003C4268 /* RxMotions.swift */; };
 		20A9B16F271C29CF003C4268 /* CheckConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B16E271C29CF003C4268 /* CheckConnect.swift */; };
 		20A9B171271C2A27003C4268 /* ConnectionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B170271C2A27003C4268 /* ConnectionActions.swift */; };
@@ -104,7 +103,6 @@
 		2087888F26FA25E700C09E9A /* RemoveOldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldInfo.swift; sourceTree = "<group>"; };
 		2087889126FA260200C09E9A /* ReturnModelsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnModelsDB.swift; sourceTree = "<group>"; };
 		2087889626FA321200C09E9A /* AvatarsLoaderForTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarsLoaderForTable.swift; sourceTree = "<group>"; };
-		20A9B165271C19B6003C4268 /* CheckDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataBase.swift; sourceTree = "<group>"; };
 		20A9B167271C1B8E003C4268 /* RxMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMotions.swift; sourceTree = "<group>"; };
 		20A9B16E271C29CF003C4268 /* CheckConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConnect.swift; sourceTree = "<group>"; };
 		20A9B170271C2A27003C4268 /* ConnectionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionActions.swift; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 		20A9B164271C199C003C4268 /* FunctionsVC */ = {
 			isa = PBXGroup;
 			children = (
-				20A9B165271C19B6003C4268 /* CheckDataBase.swift */,
 				20A9B167271C1B8E003C4268 /* RxMotions.swift */,
 				20A9B170271C2A27003C4268 /* ConnectionActions.swift */,
 			);
@@ -623,7 +620,6 @@
 				2043E16426F9EA5800FD3667 /* AllUsersViewModel.swift in Sources */,
 				2087884026FA1B4C00C09E9A /* RepoStruct.swift in Sources */,
 				2043E13426F9EA0B00FD3667 /* SceneDelegate.swift in Sources */,
-				20A9B166271C19B6003C4268 /* CheckDataBase.swift in Sources */,
 				2087889026FA25E700C09E9A /* RemoveOldInfo.swift in Sources */,
 				20A9B193271EE278003C4268 /* UserObj.swift in Sources */,
 				20A9B19D27200D51003C4268 /* ReposLoader.swift in Sources */,

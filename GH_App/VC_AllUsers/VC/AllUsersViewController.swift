@@ -28,12 +28,10 @@ class ViewController: UIViewController {
     
     private let allUsersInfoRealm = ReturnInfoModels().returnAllUsers()
                 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         spin = Spinner()
         spin?.createSpinner(vc: self.view)
-        CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo)
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         refreshControl.tintColor = .white
         self.allUsersTable.addSubview(refreshControl)
@@ -43,7 +41,14 @@ class ViewController: UIViewController {
     }
 
     @objc func refresh(_ sender: AnyObject) {
-        ConnectionActions().checkIntenet(vc: self, allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersInfoRealm: self.allUsersInfoRealm, refreshStatus: true, refresh: self.refreshControl)
+        switch ConnectionActions().checkIntenet() {
+        case true:
+            self.uploadNOEmptyUsersInfo()
+            spin?.stopSpinner()
+        case false:
+            Alerts().offlineAlert(vc: self)
+        }
+        refreshControl.endRefreshing()
     }
     
     func uploadNOEmptyUsersInfo(){
@@ -56,23 +61,26 @@ class ViewController: UIViewController {
             }
         }
         self.allUsersTable.reloadData()
-        spin?.stopSpinner()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        ConnectionActions().checkIntenet(vc: self, allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo, allUsersInfoRealm: self.allUsersInfoRealm, refreshStatus: false, refresh: self.refreshControl)
-        
-        savingAllUsers.asObservable().subscribe{ status in
-            if status.element == true{
-                self.uploadNOEmptyUsersInfo()
-            }
-        }.disposed(by: disposeBag)
-
-        errorLoad.asObservable().subscribe{ error in
-            Alerts().error_Alert(vc: self, error: error.element ?? 0)
-        }.disposed(by: disposeBag)
-        
+        self.uploadNOEmptyUsersInfo()
+        switch ConnectionActions().checkIntenet() {
+        case true:
+            AllUsersViewModel().uploadAllUsersInfo()
+            savingAllUsers.asObservable().subscribe{ status in
+                if status.element == true{
+                    self.uploadNOEmptyUsersInfo()
+                    self.spin?.stopSpinner()
+                }
+            }.disposed(by: disposeBag)
+            errorLoad.asObservable().subscribe{ error in
+                Alerts().error_Alert(vc: self, error: error.element ?? 0)
+            }.disposed(by: disposeBag)
+        case false:
+            Alerts().offlineAlert(vc: self)
+        }
         self.allUsersTable.rx.itemSelected.subscribe(onNext: { indexPath in
               RxMotions().openNewVC(vc: self, usersLogins: self.usersLogins, indPath: indexPath)
         }).disposed(by: disposeBag)
@@ -82,11 +90,12 @@ class ViewController: UIViewController {
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != ""{
-            if Connectivity.isConnectedToInternet{
+            switch ConnectionActions().checkIntenet() {
+            case true:
                 self.startSearch = true
                 searchUserName = searchText
                 AllUsersViewModel().infoSearchDelegate = self
-            }else{
+            case false:
                 Alerts().offlineAlert(vc: self)
             }
         }else{

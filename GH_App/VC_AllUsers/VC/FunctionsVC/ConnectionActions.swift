@@ -10,19 +10,15 @@ import UIKit
 import RealmSwift
 
 class ConnectionActions{
-    func checkIntenet(vc: UIViewController, allUsersTable: UITableView, uploadNOEmptyUsersInfo: () -> Void, allUsersInfoRealm: Results<AllUsersInfoDB>, refreshStatus: Bool, refresh: UIRefreshControl){
+    func checkIntenet() -> Bool{
+        var connect = false
         if Connectivity.isConnectedToInternet{
                 print("-Internet is available.")
-            if refreshStatus == true{
-                CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo)
-                refresh.endRefreshing()
-            }
+            connect = true
         }else{
             print("-Internet is not available.")
-            Alerts().offlineAlert(vc: vc)
-            if refreshStatus == true{
-                refresh.endRefreshing()
-            }
+            connect = false
         }
+        return connect
     }
 }
