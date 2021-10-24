@@ -10,11 +10,6 @@ import UIKit
 import RealmSwift
 
 class RxMotions{
-    func allUsersSaving(allUsersTable: UITableView, uploadNOEmptyUsersInfo: @escaping() -> Void){
-        uploadNOEmptyUsersInfo()
-        allUsersTable.reloadData()
-    }
-    
     func openNewVC(vc: UIViewController, usersLogins: [String], indPath: IndexPath){
         chooseLogin = usersLogins[indPath.row]
       let storyboard = UIStoryboard(name: "Main", bundle: nil)

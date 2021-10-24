@@ -11,7 +11,7 @@ import RealmSwift
 
 class ConnectionActions{
     func checkIntenet(vc: UIViewController, allUsersTable: UITableView, uploadNOEmptyUsersInfo: () -> Void, allUsersInfoRealm: Results<AllUsersInfoDB>, refreshStatus: Bool, refresh: UIRefreshControl){
-        if Connectivity.isConnectedToInternet {
+        if Connectivity.isConnectedToInternet{
                 print("-Internet is available.")
             if refreshStatus == true{
                 CheckDataBase().outputInfoFromDataBase(allUsersInfoRealm: allUsersInfoRealm, uploadNOEmptyUsersInfo: uploadNOEmptyUsersInfo)

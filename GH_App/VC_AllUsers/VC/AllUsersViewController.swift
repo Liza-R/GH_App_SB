@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         
         savingAllUsers.asObservable().subscribe{ status in
             if status.element == true{
-                RxMotions().allUsersSaving(allUsersTable: self.allUsersTable, uploadNOEmptyUsersInfo: self.uploadNOEmptyUsersInfo)
+                self.uploadNOEmptyUsersInfo()
             }
         }.disposed(by: disposeBag)
 
