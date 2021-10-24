@@ -12,7 +12,6 @@ import RxSwift
 var savingUserInfo = BehaviorRelay<Bool>(value: false)
 
 class UserViewController: UIViewController{
-    @IBOutlet weak var topTableConstraint: NSLayoutConstraint!
     @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -44,7 +43,6 @@ class UserViewController: UIViewController{
         self.returnLastDBInfo()
         self.allReposTable.rowHeight = 160
         self.allReposTable.dataSource = self
-        self.allReposTable.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -92,22 +90,6 @@ class UserViewController: UIViewController{
             }
         }else{
             print("DB is empty")
-        }
-    }
-}
-
-extension UserViewController: UITableViewDelegate{
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = self.allReposTable.contentOffset
-        if let startOffset = self.defaultOffSet {
-            if offset.y < startOffset.y {
-                //let deltaY = abs((startOffset.y - offset.y))
-                topTableConstraint.constant = topTableConstraint.constant + 5
-            } else {
-                //let deltaY = abs((startOffset.y - offset.y))
-                topTableConstraint.constant = topTableConstraint.constant - 5
-            }
-            self.view.layoutIfNeeded()
         }
     }
 }

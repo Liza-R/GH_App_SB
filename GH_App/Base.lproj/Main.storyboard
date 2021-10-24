@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Input user name" translatesAutoresizingMaskIntoConstraints="NO" id="sCZ-1a-rcs">
-                                <rect key="frame" x="20" y="104" width="388" height="60"/>
+                                <rect key="frame" x="0.0" y="104" width="428" height="60"/>
                                 <color key="backgroundColor" red="0.2352941036" green="0.1215686351" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="LdI-dy-985"/>
@@ -97,7 +97,7 @@
                             <constraint firstItem="evO-Yj-n1z" firstAttribute="top" secondItem="sCZ-1a-rcs" secondAttribute="bottom" constant="10" id="HxJ-Lv-G5V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="evO-Yj-n1z" secondAttribute="trailing" constant="20" id="VQy-nr-yd6"/>
                             <constraint firstItem="sCZ-1a-rcs" firstAttribute="top" secondItem="1BX-lX-Hag" secondAttribute="bottom" id="a3Q-f1-LiT"/>
-                            <constraint firstItem="sCZ-1a-rcs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j67-oj-eAy"/>
+                            <constraint firstItem="sCZ-1a-rcs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j67-oj-eAy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="evO-Yj-n1z" secondAttribute="bottom" constant="10" id="qWl-3H-Gxe"/>
                             <constraint firstItem="evO-Yj-n1z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sHV-oI-KNR"/>
                             <constraint firstItem="sCZ-1a-rcs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yLb-aT-lY7"/>
@@ -128,7 +128,7 @@
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="209-LE-5DZ">
-                                    <rect key="frame" x="0.0" y="232.33333206176761" width="408" height="14"/>
+                                    <rect key="frame" x="0.0" y="232.33333206176758" width="408" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
