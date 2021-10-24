@@ -13,7 +13,8 @@ class RemoveOldUserInfo{
             for j in i.user{
                 if j.login == chooseLogin{
                     try! SaveUserInfo().realmUser.write {
-                        SaveUserInfo().realmUser.delete(i.user)
+                        SaveUserInfo().realmUser.delete(i)
+                        print("user \(j.login) remove")
                     }
                 }
             }

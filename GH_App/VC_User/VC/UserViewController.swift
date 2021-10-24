@@ -30,11 +30,12 @@ class UserViewController: UIViewController {
         lang_repo: [String] = [],
         disposeBag = DisposeBag()
     
-    private let allSavedViewedUsersInfoDB = ReturnUserInfoModels().returnAllUserInfo(),
-                userVM = UserViewModel()
+    private let allSavedViewedUsersInfoDB = ReturnUserInfoModels().returnAllUserInfo()
+            var userVM: UserViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        savingUserInfo.accept(false)
         self.returnLastDBInfo()
         self.allReposTable.rowHeight = 160
         self.allReposTable.dataSource = self
@@ -43,11 +44,13 @@ class UserViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if Connectivity.isConnectedToInternet{
-            userVM.uploadUserInfo()
-            userVM.uploadReposInfo()
+            userVM = UserViewModel()
             savingUserInfo.asObservable().subscribe{ status in
                 if status.element == true{
+                    print("rx func yes")
                     self.returnLastDBInfo()
+                }else{
+                    print("rx func no")
                 }
             }.disposed(by: disposeBag)
         }else{
@@ -61,6 +64,7 @@ class UserViewController: UIViewController {
             for i in allSavedViewedUsersInfoDB{
                 for t in i.user{
                     if t.login == chooseLogin{
+                        print("user \(t.login) found in the database")
                         self.nameLabel.text = "Name: \(t.name)"
                         self.userNameLabel.text = t.login
                         self.userIcon.image = UIImage(data: t.ava as Data)
@@ -78,6 +82,8 @@ class UserViewController: UIViewController {
                             self.lang_repo.append(h.lang_repo)
                         }
                         self.allReposTable.reloadData()
+                    }else{
+                        print("user \(t.login) not found in the database")
                     }
                 }
             }
