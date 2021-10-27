@@ -35,6 +35,14 @@ class GH_AppUITests: XCTestCase {
         clearTextButton.tap()
     }
     
+    func testRefresh(){
+        let tablesQuery = app.tables
+        let firstCell = tablesQuery.firstMatch
+        let start = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+        let finish = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 2))
+        start.press(forDuration: 0, thenDragTo: finish)
+    }
+    
     func testTableAllUsersSwipes(){
         let tablesQuery = app.tables,
             tableElement = tablesQuery.element
