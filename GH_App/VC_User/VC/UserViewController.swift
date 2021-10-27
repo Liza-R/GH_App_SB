@@ -37,6 +37,7 @@ class UserViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.allReposTable.accessibilityIdentifier = "allUserReposTable"
         spin = Spinner()
         spin?.createSpinner(vc: self.view)
         savingUserInfo.accept(false)

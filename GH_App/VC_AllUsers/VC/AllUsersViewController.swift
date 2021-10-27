@@ -30,6 +30,7 @@ class ViewController: UIViewController {
                 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.allUsersTable.accessibilityIdentifier = "allUsersTable"
         spin = Spinner()
         spin?.createSpinner(vc: self.view)
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)

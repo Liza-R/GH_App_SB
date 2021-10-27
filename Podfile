@@ -4,8 +4,7 @@
 use_frameworks!
 
 def testing_pods
-  pod 'Quick'
-  pod 'Nimble'
+  pod 'Mocker'
 end
 
 target 'GH_App' do
