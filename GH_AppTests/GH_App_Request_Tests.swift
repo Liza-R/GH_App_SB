@@ -69,7 +69,6 @@ class GH_App_Request_Tests: XCTestCase {
         }
         dataTask.resume()
         waitForExpectations(timeout: 3.0, handler: nil)
-        
         XCTAssertNil(responseError)
         XCTAssertEqual(statusCode, 200)
     }

@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="60" id="LdI-dy-985"/>
                                 </constraints>
                                 <color key="barTintColor" red="0.2352941036" green="0.1215686351" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>

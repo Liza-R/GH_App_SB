@@ -66,6 +66,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.allUsersTable.keyboardDismissMode = .onDrag
         self.uploadNOEmptyUsersInfo()
         switch ConnectionActions().checkIntenet() {
         case true:
@@ -105,6 +106,13 @@ extension ViewController: UISearchBarDelegate{
             self.startSearch = false
             self.uploadNOEmptyUsersInfo()
         }
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        self.userSearchBar.endEditing(true)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.userSearchBar.endEditing(true)
     }
 }
 
