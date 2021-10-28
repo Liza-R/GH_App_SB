@@ -9,8 +9,8 @@ import Foundation
 import RealmSwift
 
 class SaveInfo{
-    let realm = try! Realm()
-    
+    var realm = try! Realm()
+
     func savingAllUsersInfo(logins: [String], avatars: [NSData]){
         let infoUser = AllUsersInfoDB()
         for (i, j) in logins.enumerated(){

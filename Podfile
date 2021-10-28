@@ -1,10 +1,11 @@
 # source 'https://github.com/CocoaPods/Specs.git'
 
-# platform :ios, '13.0'
+platform :ios, '12.0'
 use_frameworks!
 
 def testing_pods
   pod 'Mocker'
+  pod 'RealmSwift'
 end
 
 target 'GH_App' do
@@ -12,7 +13,6 @@ target 'GH_App' do
     pod 'AlamofireImage'
     pod 'RxSwift'
     pod 'RxCocoa'
-    pod 'RealmSwift'
     pod 'RxRealm'
     testing_pods
 end

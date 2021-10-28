@@ -38,7 +38,6 @@
 		2087889726FA321200C09E9A /* AvatarsLoaderForTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087889626FA321200C09E9A /* AvatarsLoaderForTable.swift */; };
 		20A722A42725D1190077E402 /* ExtensionForAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A722A32725D1190077E402 /* ExtensionForAlerts.swift */; };
 		20A722AD27296E780077E402 /* GH_App_Request_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A722AC27296E780077E402 /* GH_App_Request_Tests.swift */; };
-		20A722B3272995BD0077E402 /* JSON_AllUsers_Ex.json in Resources */ = {isa = PBXBuildFile; fileRef = 20A722B2272995BD0077E402 /* JSON_AllUsers_Ex.json */; };
 		20A9B168271C1B8E003C4268 /* RxMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B167271C1B8E003C4268 /* RxMotions.swift */; };
 		20A9B16F271C29CF003C4268 /* CheckConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B16E271C29CF003C4268 /* CheckConnect.swift */; };
 		20A9B171271C2A27003C4268 /* ConnectionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B170271C2A27003C4268 /* ConnectionActions.swift */; };
@@ -50,6 +49,7 @@
 		20A9B199271EE2A1003C4268 /* ReturnUserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B198271EE2A1003C4268 /* ReturnUserModels.swift */; };
 		20A9B19D27200D51003C4268 /* ReposLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B19C27200D51003C4268 /* ReposLoader.swift */; };
 		20A9B19F27203A0D003C4268 /* RemoveOldUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B19E27203A0D003C4268 /* RemoveOldUserInfo.swift */; };
+		20AF63D8272A8D3D00D17F87 /* GH_App_Realm_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF63D7272A8D3D00D17F87 /* GH_App_Realm_Tests.swift */; };
 		95B915FF4CB556B6365FBB54 /* Pods_GH_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD9EE702A2A588CC5FC6BF /* Pods_GH_App.framework */; };
 		A66C9FD8617F45747D610B28 /* Pods_GH_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72684B24978067067BDB3673 /* Pods_GH_AppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -108,7 +108,6 @@
 		2087889626FA321200C09E9A /* AvatarsLoaderForTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarsLoaderForTable.swift; sourceTree = "<group>"; };
 		20A722A32725D1190077E402 /* ExtensionForAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionForAlerts.swift; sourceTree = "<group>"; };
 		20A722AC27296E780077E402 /* GH_App_Request_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GH_App_Request_Tests.swift; sourceTree = "<group>"; };
-		20A722B2272995BD0077E402 /* JSON_AllUsers_Ex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSON_AllUsers_Ex.json; sourceTree = "<group>"; };
 		20A9B167271C1B8E003C4268 /* RxMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMotions.swift; sourceTree = "<group>"; };
 		20A9B16E271C29CF003C4268 /* CheckConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConnect.swift; sourceTree = "<group>"; };
 		20A9B170271C2A27003C4268 /* ConnectionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionActions.swift; sourceTree = "<group>"; };
@@ -120,6 +119,7 @@
 		20A9B198271EE2A1003C4268 /* ReturnUserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnUserModels.swift; sourceTree = "<group>"; };
 		20A9B19C27200D51003C4268 /* ReposLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposLoader.swift; sourceTree = "<group>"; };
 		20A9B19E27203A0D003C4268 /* RemoveOldUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveOldUserInfo.swift; sourceTree = "<group>"; };
+		20AF63D7272A8D3D00D17F87 /* GH_App_Realm_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GH_App_Realm_Tests.swift; sourceTree = "<group>"; };
 		5CD93D48A9F9AC40F57A3922 /* Pods-GH_AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_AppTests.release.xcconfig"; path = "Target Support Files/Pods-GH_AppTests/Pods-GH_AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		72684B24978067067BDB3673 /* Pods_GH_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH_App.debug.xcconfig"; path = "Target Support Files/Pods-GH_App/Pods-GH_App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 			children = (
 				2043E14A26F9EA0C00FD3667 /* Info.plist */,
 				20A722AC27296E780077E402 /* GH_App_Request_Tests.swift */,
-				20A722B2272995BD0077E402 /* JSON_AllUsers_Ex.json */,
+				20AF63D7272A8D3D00D17F87 /* GH_App_Realm_Tests.swift */,
 			);
 			path = GH_AppTests;
 			sourceTree = "<group>";
@@ -566,7 +566,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20A722B3272995BD0077E402 /* JSON_AllUsers_Ex.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AF63D8272A8D3D00D17F87 /* GH_App_Realm_Tests.swift in Sources */,
 				20A722AD27296E780077E402 /* GH_App_Request_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -914,6 +914,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 753C00095681B8A0B89FA714 /* Pods-GH_App.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -934,6 +935,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F551BA2F9CBDBB27C5EF23A4 /* Pods-GH_App.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -954,7 +956,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDF63F6595D490E4FC766A91 /* Pods-GH_AppTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -979,7 +981,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5CD93D48A9F9AC40F57A3922 /* Pods-GH_AppTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1003,7 +1005,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E3CC31053CAD550637194D9 /* Pods-GH_AppUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22UF6659H5;
 				INFOPLIST_FILE = GH_AppUITests/Info.plist;
@@ -1024,7 +1026,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87FCB4D33B5660DC856942AC /* Pods-GH_AppUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22UF6659H5;
 				INFOPLIST_FILE = GH_AppUITests/Info.plist;
